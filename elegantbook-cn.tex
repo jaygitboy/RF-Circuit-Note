@@ -1,15 +1,17 @@
 \documentclass[lang=cn,10pt]{elegantbook}
 
-\title{ElegantBook：优美的 \LaTeX{} 书籍模板}
-\subtitle{Elegant\LaTeX{} 经典之作}
 
-\author{Ethan Deng \& Liam Huang}
-\institute{Elegant\LaTeX{} Program}
-\date{April 9, 2022}
-\version{4.3}
-\bioinfo{自定义}{信息}
 
-\extrainfo{不要以为抹消过去，重新来过，即可发生什么改变。—— 比企谷八幡}
+\title{射频电路设计——理论与应用笔记}
+\subtitle{RF Circuit Design: Theory and Application Notes}
+
+\author{ZXY \& HHX}
+\institute{HUST IC }
+\date{December, 2025}
+\version{1.0}
+% \bioinfo{自定义}{信息}
+
+\extrainfo{射频请再爱我一次吧！}
 
 \setcounter{tocdepth}{3}
 
@@ -30,67 +32,178 @@
 \frontmatter
 
 \tableofcontents
-
 \mainmatter
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%第一章  引言 -by ZXY
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \chapter{引言}
+\begin{introduction}
+  \item 射频电路设计的重要性
+  \item 量纲与单位
+  \item 频谱
+  \item 无源器件的射频特性
+  \item 贴片元件及电路板
+  \item 射频电路制方法
+\end{introduction}
 
-Elegant\LaTeX{} 项目组致力于打造一系列美观、优雅、简便的模板方便用户使用。目前由 \href{https://github.com/ElegantLaTeX/ElegantNote}{ElegantNote}，\href{https://github.com/ElegantLaTeX/ElegantBook}{ElegantBook}，\href{https://github.com/ElegantLaTeX/ElegantPaper}{ElegantPaper} 组成，分别用于排版笔记，书籍和工作论文。强烈推荐使用最新正式版本！本文将介绍本模板的一些设置内容以及基本使用方法。如果您有其他问题，建议或者意见，欢迎在 GitHub 上给我们提交 \href{https://github.com/ElegantLaTeX/ElegantBook/issues}{issues} 或者邮件联系我们。
+\section{射频电路设计的重要性}
 
-我们的联系方式如下，建议加入用户 QQ 群提问，这样能更快获得准确的反馈，加群时请备注 \LaTeX{} 或者 Elegant\LaTeX{} 相关内容。
-\begin{itemize}
-  \item 官网：\href{https://elegantlatex.org/}{https://elegantlatex.org/}（暂时歇业）
-  \item GitHub 地址：\href{https://github.com/ElegantLaTeX/}{https://github.com/ElegantLaTeX/}
-  \item Gitee 地址：\href{https://gitee.com/ElegantLaTeX}{https://gitee.com/ElegantLaTeX}
-  \item CTAN 地址：\href{https://ctan.org/pkg/elegantbook}{https://ctan.org/pkg/elegantbook}
-  \item 下载地址：\href{https://github.com/ElegantLaTeX/ElegantBook/releases}{正式发行版}，\href{https://github.com/ElegantLaTeX/ElegantBook/archive/master.zip}{最新版}
-  \item 微博：Elegant\LaTeX{}（密码有点忘了）
-  \item 微信公众号：Elegant\LaTeX{}（不定期更新）
-  \item 用户 QQ 群：692108391（建议加群）
-  \item 邮件：\email{elegantlatex2e@gmail.com}
-\end{itemize}
+\begin{definition}{集中参数理论}{def:rf-circuit}
+电路元件的空间分布尺度为零（点状）。
+\end{definition}
 
-\section{模板安装与更新}
+\begin{definition}{分布参数理论}{def:rf-circuit}
+电路元件相对于工作波长，具有有限的空间分布尺度。
+\end{definition}
+ 如下图所示的是一个典型的射频系统框图：
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.9\textwidth]{射频系统框图.png}
+\caption{射频系统框图}
+\end{figure}
 
-你可以通过免安装的方式使用本模板，包括在线使用和本地（文件夹内）使用两种方式，也可以通过 \TeX{} 发行版安装使用。
+\section{量纲与单位}
 
-\subsection{在线使用模板}
+对于电磁波在自由空间中沿$z$轴正方向的传播的平面电磁，可以用正弦波的形式表示为：
 
-我们把三套模板全部上传到 \href{https://www.overleaf.com/}{Overleaf} 上了，网络便利的用户可以直接通过 Overleaf 在线使用我们的模板。使用 Overleaf 的好处是无需安装 \TeX{} Live，可以随时随地访问自己的文件。查找模板，请在 Overleaf 模板库里面搜索 \lstinline{elegantlatex} 即可，你也可以直接访问\href{https://www.overleaf.com/latex/templates?addsearch=elegantlatex}{搜索结果}。选择适当的模板之后，将其 \lstinline{Open as Template}，即可把模板存到自己账户下，然后可以自由编辑以及与别人一起协作。更多关于 Overleaf 的介绍和使用，请参考 Overleaf 的\href{https://www.overleaf.com/learn}{官方文档}。
+\begin{equation}
+  \begin{aligned}
+    \mathbf{E}_x &= E_{0x} \cos(\omega t - \beta z) \\
+    \mathbf{H}_{y} &= H_{0y} \cos(\omega t - \beta z )
+  \end{aligned}
+\end{equation}
 
-\subsection{本地免安装使用}
+其中，$E_{0x}$与$H_{0y}$分别为电场和磁场的幅值，$\omega$为角频率，$\beta$为传播常数。
 
-\textbf{免安装}使用方法如下：从 GitHub 或者 CTAN 下载最新版，严格意义上只需要类文件 \lstinline{elegantbook.cls}。然后将模板文件放在你的工作目录下即可使用。这样使用的好处是，无需安装，简便；缺点是，当模板更新之后，你需要手动替换 \lstinline{cls} 文件。
-
-\subsection{发行版安装与更新}
-
-本模板测试环境为 
-\begin{enumerate}
-  \item Win10 + \TeX{} Live 2022；
-  \item Ubuntu 20.04 + \TeX{} Live 2022；
-  \item macOS Monterey + Mac\TeX{} 2022。
-\end{enumerate}
-
-\TeX Live/Mac\TeX{} 的安装请参考啸行的\href{https://github.com/OsbertWang/install-latex-guide-zh-cn/releases/}{一份简短的关于安装 \LaTeX{} 安装的介绍}。
-
-安装 \TeX{} Live 之后，安装后建议升级全部宏包，升级方法：使用 cmd 或 terminal 运行 \lstinline{tlmgr update --all}，如果 tlmgr 需要更新，请使用 cmd 运行 \lstinline{tlmgr update --self}，如果更新过程中出现了中断，请改用 \lstinline{tlmgr update --self --all --reinstall-forcibly-removed} 更新，也即
-
-\begin{lstlisting}
-tlmgr update --self 
-tlmgr update --all
-tlmgr update --self --all --reinstall-forcibly-removed
-\end{lstlisting}
-
-更多的内容请参考 \href{https://tex.stackexchange.com/questions/55437/how-do-i-update-my-tex-distribution}{How do I update my \TeX{} distribution?}
-
-\subsection{其他发行版本}
-
-由于宏包版本问题，本模板不支持 C\TeX{} 套装，请务必安装 TeX Live/Mac\TeX{}。更多关于 \TeX{} Live 的安装使用以及 C\TeX{} 与 \TeX{} Live 的兼容、系统路径问题，请参考官方文档以及啸行的\href{https://github.com/OsbertWang/install-latex-guide-zh-cn/releases/}{一份简短的关于安装 \LaTeX{} 安装的介绍}。
+\begin{definition}{传播常数}{def:propagation-const}
+  传播常数$\beta$定义为：电磁波相对于波长$\lambda$在空间的延伸程度
+  \begin{equation}
+    \beta = \frac{2\pi}{\lambda}
+  \end{equation}
+\end{definition}
 
 
-\section{关于提交}
+\begin{lemma}{复数形式的电磁波}{lem:complex-em}
 
-出于某些因素的考虑，Elegant\LaTeX{} 项目自 2019 年 5 月 20 日开始，\textbf{不再接受任何非作者预约性质的提交}（pull request）！如果你想改进模板，你可以给我们提交 issues，或者可以在遵循协议（LPPL-1.3c）的情况下，克隆到自己仓库下进行修改。
+  谐波信号可以用复数形式表示为：
+  \begin{equation}
+    \begin{aligned}
+      \tilde{\mathbf{E}}_x &= \text{Re}\left\{ E_{0x} e^{j(\omega t - \beta z)} \right\} \\
+      \tilde{\mathbf{H}}_{y} &= \text{Re}\left\{ H_{0y} e^{j(\omega t - \beta z )} \right\}
+    \end{aligned}
+  \end{equation}
+  其中，与经典电路理论不同的是，相位因子$ E_{0x} e^{-j\beta z}$与空间参数有关。
+\end{lemma}
+
+\begin{definition}{特征阻抗}{def:characteristic-impedance}
+  特征阻抗$Z_0$定义为电磁波中电场与磁场的比值：
+  \begin{equation}
+    Z_0 = \frac{E_{x}}{H_{y}}=\sqrt{\frac{\mu}{\varepsilon}}=\sqrt{\frac{\mu _0\mu _r}{\varepsilon _0\varepsilon _r}}=377 \Omega\sqrt{\frac{\mu _r}{\varepsilon _r}}
+  \end{equation}
+\end{definition}
+ 磁导率$\mu$与介电常数$\varepsilon$分别表示介质的电磁特性，与材料有关，$\mu_0$与$_0$分别为自由空间的磁导率与介电常数，$\mu_r$与$\varepsilon_r$分别为介质的相对磁导率与相对介电常数。
+
+\begin{note}
+  \begin{itemize}
+  \item 自由空间中，特征阻抗$Z_0 = 377 \Omega$。
+  \item 特征阻抗$Z_0$只与介质的电磁特性有关。同时也被称为波阻抗或者本征阻抗。
+  \end{itemize}
+\end{note}
+
+
+
+\begin{remark} 
+  需要指出的是，本书中所讨论的电磁波均为TEM模式电磁波，即电场与磁场均垂直于传播方向。
+  \begin{lstlisting}
+    TEM模式：这种模式对应于自由空间或微波传输线中的电磁波传播，其传播速度取决于介质的电磁特性或者传输线的几何结构。
+
+    TE模式和TM模式：这些模式通常出现在微波波导或光纤中，其传播速度不仅取决于介质的电磁特性，还受到波导的几何结构和工作频率的影响。如果工作频率低于TE或TM模式的截止频率，则这些模式无法传播。传输TEM模式的传输线也可以支持TE和TM模式的传播，但是他们的截止频率通常远远高于系统的工作频率。
+  \end{lstlisting}
+\end{remark}
+
+
+\begin{theorem}{电磁波的基本性质}{axi:em-wave}
+  在非磁性介质中（$\mu_r=1$）电磁波的相速度$v_p$可以表示为：
+  \begin{equation}
+  v_p=\frac{\omega}{\beta}=\frac{1}{\sqrt{\mu \varepsilon}}=\frac{1}{\sqrt{\mu _0\varepsilon _0}}\cdot \frac{1}{\sqrt{\varepsilon _r}}=\frac{c}{\sqrt{\varepsilon _r}}
+  \end{equation}
+  其中，$c$为光速，$c=\frac{1}{\sqrt{\mu _0\varepsilon _0}}\approx 3\times 10^8 m/s$。
+\end{theorem}  
+
+\begin{remark}
+  由上式可知，电磁波在介质中的传播速度小于光速，并且随着介质的介电常数$\varepsilon_r$的增大而减小。自由空间中，电磁波的传播速度等于光速。
+\end{remark}
+
+\begin{example}
+  分别计算自由空间中和介电常数$\varepsilon_r=4.6$的介质中电磁波的本征波阻抗、相速度与波长。频率$f=30\text{MHz},3\text{GHz}$。
+\end{example}
+
+\begin{solution}
+
+  \textbf{根据特征阻抗的定义式，可得：}
+  \begin{equation}
+    Z_0 = 377 \Omega\sqrt{\frac{\mu _r}{\varepsilon _r}}
+  \end{equation}
+  因为介质均为非磁性介质，所以$\mu_r=1$，因此可得：
+  \begin{itemize}
+    \item 自由空间中，$\varepsilon_r=1$，所以$Z_0=377\Omega$；
+    \item 介电常数$\varepsilon_r=4.6$的介质中，$Z_0=377\Omega/\sqrt{4.6}=175.7\Omega$。
+  \end{itemize}
+  根据电磁波的基本性质定理，可得：
+  \begin{equation}
+    v_p=\frac{c}{\sqrt{\varepsilon _r}}
+  \end{equation}
+  因此可得：
+  \begin{itemize}
+    \item 自由空间中，$\varepsilon_r=1$，所以$v_p=c=3\times 10^8 m/s$；
+    \item 介电常数$\varepsilon_r=4.6$的介质中，$v_p=c/\sqrt{4.6}=1.4\times 10^8 m/s$。
+  \end{itemize}
+  \textbf{根据波长与频率的关系式，可得：}
+  \begin{equation}
+    \lambda =\frac{2\pi}{\beta}=\frac{2\pi v_p}{w}=\frac{v_p}{f}
+  \end{equation}
+  因此可得：
+  \begin{itemize}
+    \item 自由空间中，$\varepsilon_r=1$，所以当$f=30\text{MHz}$时，$\lambda =10m$；当$f=3\text{GHz}$时，$\lambda =10cm$；
+    \item 介电常数$\varepsilon_r=4.6$的介质中，当$f=30\text{MHz}$时，$\lambda =4.67m$；当$f=3\text{GHz}$时，$\lambda =4.7cm$。
+  \end{itemize}
+\end{solution}
+
+\begin{conclusion}
+  \begin{itemize}
+    \item 电磁波的特征阻抗只与介质的电磁特性有关。
+    \item 电磁波的波长与频率成反比，与传播速度成正比。随着频率的升高，波长将减小到可与电路元件的尺寸相当，从而使得分布参数效应变得显著。
+  \end{itemize}
+\end{conclusion}
+
+\section{频谱}
+如下表所示的是常用的频谱划分及其用途：
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.9\textwidth]{频段划分表.png}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \chapter{ElegantBook 设置说明}
@@ -261,7 +374,7 @@ tlmgr update --self --all --reinstall-forcibly-removed
       \item \textcolor{second}{\textbf{theorem、lemma、corollary、axiom、postulate}} 环境，颜色为 \textcolor{second} {second}；
       \item \textcolor{third}{\textbf{proposition}} 环境，颜色为 \textcolor{third}{third}。
     \end{itemize}
-  \item \textit{示例类环境}，有 \textbf{example、problem、exercise} 环境（对应于例、例题、练习），自动编号，编号以章节为单位，其中 \textbf{exercise} 有提示符。
+  \item \textit{示例类环境}，有 \textbf{example、problem、exercise环境}（对应于例、例题、练习），自动编号，编号以章节为单位，其中 \textbf{exercise} 有提示符。
   \item \textit{提示类环境}，有 \textbf{note} 环境，特点是：无编号，有引导符。
   \item \textit{结论类环境}，有 \textbf{conclusion、assumption、property、remark、solution} 环境\footnote{本模板还添加了一个 result 选项，用于隐藏 \lstinline{solution} 和 \lstinline{proof} 环境，默认为显示（\lstinline{result=answer}），隐藏使用 \lstinline{result=noanswer}。}，三者均以粗体的引导词为开头，和普通段落格式一致。
 \end{itemize}
