@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.3.27)  17 DEC 2025 01:08
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.3.27)  17 DEC 2025 18:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1466,76 +1466,81 @@ File: ./image/射频系统框图.png Graphic file (type bmp)
 ]
 LaTeX Font Info:    Font shape `TU/texgyretermes(0)/m/n' will be
 (Font)              scaled to size 5.0pt on input line 96.
-
+ [2]
 
 LaTeX Font Warning: Font shape `TU/KaiTi(0)/b/n' undefined
 (Font)              using `TU/KaiTi(0)/m/n' instead on input line 148.
 
-[2]
 File: ./image/频段划分表.png Graphic file (type bmp)
 <./image/频段划分表.png>
- [3]
+[3]
+LaTeX Font Info:    Font shape `TU/texgyretermes(0)/b/n' will be
+(Font)              scaled to size 12.0pt on input line 217.
+ [4]
+File: ./image/高频电阻电路模型.png Graphic file (type bmp)
+<./image/高频电阻电路模型.png>
+ [5]
+File: ./image/高频线绕电阻电路模型.png.png Graphic file (type bmp)
+<./image/高频线绕电阻电路模型.png.png>
+File: ./image/ex3电路模型.png Graphic file (type bmp)
+<./image/ex3电路模型.png>
+File: ./image/高频电阻阻抗特性曲线.png Graphic file (type bmp)
+<./image/高频电阻阻抗特性曲线.png>
+ [6]
 Chapter 2.
 LaTeX Font Info:    Font shape `TU/texgyretermes(0)/m/n' will be
-(Font)              scaled to size 8.0pt on input line 241.
+(Font)              scaled to size 8.0pt on input line 443.
 LaTeX Font Info:    Font shape `TU/texgyretermes(0)/m/n' will be
-(Font)              scaled to size 6.0pt on input line 241.
-[4
+(Font)              scaled to size 6.0pt on input line 443.
+[7
 
-]
-LaTeX Font Info:    Font shape `TU/texgyretermes(0)/b/n' will be
-(Font)              scaled to size 12.0pt on input line 306.
- [5]
+] [8]
 LaTeX Font Info:    Font shape `TU/texgyretermes(0)/m/it' will be
-(Font)              scaled to size 10.0pt on input line 349.
- [6] [7]
-
-LaTeX Warning: Citation 'cn1' on page 8 undefined on input line 525.
-
-
-LaTeX Warning: Citation 'en2' on page 8 undefined on input line 525.
-
-
-LaTeX Warning: Citation 'en3' on page 8 undefined on input line 525.
-
-[8]
-LaTeX Font Info:    Font shape `TU/texgyretermes(0)/m/n' will be
-(Font)              scaled to size 14.4pt on input line 603.
+(Font)              scaled to size 10.0pt on input line 551.
  [9] [10]
+
+LaTeX Warning: Citation 'cn1' on page 11 undefined on input line 727.
+
+
+LaTeX Warning: Citation 'en2' on page 11 undefined on input line 727.
+
+
+LaTeX Warning: Citation 'en3' on page 11 undefined on input line 727.
+
+[11]
+LaTeX Font Info:    Font shape `TU/texgyretermes(0)/m/n' will be
+(Font)              scaled to size 14.4pt on input line 805.
+ [12] [13]
 Chapter 3.
-[11
+[14
 
 ]
 File: ./image/founder.png Graphic file (type bmp)
 <./image/founder.png>
- [12] [13]
+ [15] [16]
 Chapter 4.
-[14
+[17
 
 ]
 File: ./image/scatter.jpg Graphic file (type bmp)
 <./image/scatter.jpg>
- [15]
-Invalid UTF-8 byte or sequence at line 848 replaced by U+FFFD.
-
-Missing character: There is no � (U+FFFD) in font [texgyretermes-regular.otf]/OT:script=latn;language=dflt;mapping=tex-text;!
-[16]
+ [18] [19]
 Chapter 5.
-[17
+[20
 
 ]
 Chapter 6.
 LaTeX Font Info:    Font shape `TU/texgyretermes(0)/b/n' will be
-(Font)              scaled to size 9.0pt on input line 889.
-[18
-
-] [19]
-
-LaTeX Warning: Empty bibliography on input line 1048.
-
-[20]
-附录 A.
+(Font)              scaled to size 9.0pt on input line 1091.
 [21
+
+] [22]
+
+LaTeX Warning: Empty bibliography on input line 1250.
+
+[23]
+附录 A.
+[24
 
 ] (./elegantbook-cn.aux)
  ***********
@@ -1553,7 +1558,7 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `elegantbook-cn.out' has not changed.
-(rerunfilecheck)             Checksum: 6E109494B9391CEBE71919EEA165F730;5028.
+(rerunfilecheck)             Checksum: EEE7CF00B7218E8B5C60F67218919082;5430.
 
 Package biblatex Warning: Please (re)run Biber on the file:
 (biblatex)                elegantbook-cn
@@ -1564,12 +1569,12 @@ Package logreq Info: Writing requests to 'elegantbook-cn.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 48572 strings out of 474761
- 1030271 string characters out of 5761074
- 2083411 words of memory out of 5000000
- 69925 multiletter control sequences out of 15000+600000
+ 48767 strings out of 474761
+ 1033070 string characters out of 5761074
+ 2080964 words of memory out of 5000000
+ 70117 multiletter control sequences out of 15000+600000
  568626 words of font info for 134 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  103i,18n,108p,683b,2324s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on elegantbook-cn.pdf (24 pages).
+Output written on elegantbook-cn.pdf (27 pages).

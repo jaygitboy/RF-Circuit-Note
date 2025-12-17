@@ -138,7 +138,7 @@
 \begin{remark}
   由上式可知，电磁波在介质中的传播速度小于光速，并且随着介质的介电常数$\varepsilon_r$的增大而减小。自由空间中，电磁波的传播速度等于光速。
 \end{remark}
-
+\newpage
 \begin{example}
   分别计算自由空间中和介电常数$\varepsilon_r=4.6$的介质中电磁波的本征波阻抗、相速度与波长。频率$f=30\text{MHz},3\text{GHz}$。
 \end{example}
@@ -188,6 +188,209 @@
 \centering
 \includegraphics[width=0.9\textwidth]{频段划分表.png}
 \end{figure}
+
+\newpage
+\section{无源器件的射频特性}
+
+\begin{introduction}
+  \item 趋肤效应
+  \item 高频电阻
+  \item 高频电容
+  \item 高频电感
+\end{introduction}
+
+\begin{definition}{电抗}
+  根据传统的交流电路分析，电阻$R$与频率无关，而电感$L$与电容$C$的阻抗与频率有关，其电抗$X_L$与$X_C$分别表示为：
+  \begin{equation}
+    X_L = \omega L \quad , \quad X_C = -\frac{1}{\omega C}
+  \end{equation}
+  对于电容和电感的电抗，其遵循基本的电压电流关系，一般用复数表示为：
+  \begin{equation}
+    V_L = j\omega L I =jX_L I , \quad V_C = \frac{I}{j\omega C}= jX_C I  
+  \end{equation}
+\end{definition}
+\begin{remark}
+  需要注意的是，电感的电抗$X_L$为正值，而电容的电抗$X_C$为负值。
+\end{remark}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{趋肤效应}
+
+对于一个半径为a，长度为$l$，电导率为$\sigma_cond$的圆柱形导体，其直流电阻$R_{dc}$可以表示为：
+\begin{equation}
+  R_{dc} = \frac{l}{\sigma_{cond} \pi a^2}
+\end{equation}
+在直流状态下，电流均匀分布在导体的横截面上，但是在交流状态下，电流趋向于分布在导体的表面，这种现象称为趋肤效应。随着频率的升高，电流越来越集中在导体的表面
+，z方向的电流密度$J_z$可以表示为：
+\begin{equation}
+J_z\approx \frac{pI}{2\pi aj\sqrt{r}}\exp \left( -\left( 1+j \right) \frac{a-r}{\delta} \right) 
+\end{equation}
+其中，$p^2=-j\omega\mu\sigma_{cond}$,$I$是在导体中流动的总电流，$r$为距离导体中心的径向距离，$\delta$为导体的趋肤深度，其定义为：
+\begin{equation}
+  \delta = {\frac{1}{\sqrt{\pi f \mu\sigma_{cond}}}}
+\end{equation}
+
+它描述电流密度作为频率$f$,磁导率$\mu$与电导率$\sigma_{cond}$的函数在导体中的衰减程度。这可以等效为
+厚度是$\delta$的，均匀分布的一层电流，从而简化阻抗的计算。
+因此在高频状态（$f \geq 500MHz$）下，导体的归一化电阻$R$和内部电感$L_{in}$可以表示为：
+\begin{equation}
+  \frac{R}{R_{dc}} \approx \frac{a}{2\delta} 
+\end{equation}
+\begin{equation}
+  \frac{\omega L_{in}}{R_{dc}} \approx \frac{a}{2\delta}
+\end{equation}
+
+\begin{note}
+  \begin{itemize}
+    \item 内部电感$L_{in}$是由于导体内部的磁场引起的电感。
+    \item 为使得上式能够成立，导体的半径$a$应远大于趋肤深度$\delta$。
+    \item 一般导体的相对磁导率$\mu_r \approx 1$，所以趋肤深度$\delta$主要与频率$f$与电导率$\sigma_{cond}$有关。
+    其反比于频率的平方根，所以低频时趋肤深度较大。
+  \end{itemize}
+\end{note}
+
+\begin{remark}
+
+  1.趋肤深度有明确的物理意义，即电流密度衰减到其表面值的$1/e$处的深度。
+
+  2.尽管内部电感$L_{in}$随着频率的升高而增大，但是由于趋肤效应的存在，电流主要分布在导体的表面，所以内部电感$L_{in}$对总电感的影响可以忽略不计。
+  在实际设计中，电路元件的电感主要由外部电感$L_{ex}$决定。对于一个半径为a，长度为$l$的圆柱形导体，其外部电感$L_{ex}$可以近似表示为：
+  \begin{equation}
+    L_{ex} \approx \frac{\mu_0 l}{2\pi} \left[ \ln \left(\frac{2l}{a}\right) -1 \right]
+  \end{equation}
+\end{remark}
+
+\begin{example}
+  \begin{lstlisting}
+    内部电感由携带电流的导体内部产生的磁场引起，而外部电感则由导体周围的磁场引起。两者之和为导体的总电感。
+
+    在大多数电路中，还需要考虑电感之间的耦合，即某电感的磁场引起周围一个或多个电感电流变化即互感效应。
+  \end{lstlisting}
+  内部电感与外部电感的对比：
+
+  一段AWG 26 铜线的长度是$2cm$ 求在$100MHz , 2GHz $和 $5GHz$下的内部电感和外部电感。
+\end{example}
+
+\begin{solution}
+  已知AWG 26铜线的直径为$16mil$，所以其半径:
+  \begin{equation}
+   a=8mil= 8 \times (2.54 \times 10^{-5})  \text{m} = 2.032 \times 10^{-4} \text{m}=0.2032 mm  
+  \end{equation}。
+  铜的电导率$\sigma_{cond}=6.45\times 10^7 S/m$，真空的磁导率$\mu_0=4\pi \times 10^{-7} H/m$。
+
+然后利用公式计算内部电感与外部电感：
+
+\begin{equation}
+  L_{in} \approx \frac{R_{dc} a}{2\omega \delta}
+\end{equation}
+\begin{equation}
+  L_{ex} \approx \frac{\mu_0 l}{2\pi} \left[ \ln \left(\frac{2l}{a}\right) -1 \right]
+\end{equation}
+其中，直流电阻$R_{dc}$为：
+\begin{equation}
+  R_{dc} = \frac{l}{\sigma_{cond} \pi a^2} = \frac{0.02}{6.45\times 10^7 \times \pi \times (2.032 \times 10^{-4})^2} = 2.39 m\Omega
+\end{equation}
+
+计算趋肤深度：
+\begin{equation}
+  \delta = {\frac{1}{\sqrt{\pi f \mu\sigma_{cond}}}}
+\end{equation}
+
+计算结果如下表所示：
+\begin{table}[htbp]
+  \centering
+    \begin{tabular}{ccccc}
+    \toprule
+    频率(f) & 趋肤深度($\delta$) & 内部电感($L_{in}$) & 外部电感($L_{ex}$) & $\frac{L_{in}}{L_{ex}}$\\
+    \midrule
+    $100\text{MHz}$ & $6.266 \mu \text{m}$ & $0.0617\text{ nH}$ & $17.1\text{ nH}$ & $3.60 \times 10^{-3}$ \\
+    $2\text{GHz}$ & $1.40 \mu \text{m}$ & $0.0138\text{ nH}$ & $17.1\text{ nH}$ & $8.05 \times 10^{-4}$ \\
+    $5\text{GHz}$ & $0.886 \mu \text{m}$ & $0.00872\text{ nH}$ & $17.1\text{ nH}$ & $5.09 \times 10^{-4}$ \\
+    \bottomrule
+    \end{tabular}%
+  \label{tab:addlabel}%
+\end{table}%
+\end{solution}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{高频电阻}
+在射频与微波电路中，主要使用薄膜贴片式电阻。其具有良好的射频特性，尺寸可以做得比较小。
+
+对于高频下的电阻，我们常用看两种模型，一种用来描述标称组织为$R$的高频电阻，一种用来描述线绕电阻。
+
+对于标称电阻，电路模型如图所示，其引入了引线长度和寄生电容进行修正：
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.4\textwidth]{高频电阻电路模型.png}
+\caption{高频电阻的等效电路模型}
+\end{figure}
+其中，两个电感$L$表示引线的电感，$C_{a}$模拟电荷分离效应，$C_{b}$模拟内部引线电容。
+
+对于线绕电阻，其等效电路模型如图所示：
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{高频线绕电阻电路模型.png}
+\caption{高频线绕电阻的等效电路模型}
+\end{figure}
+此处多引入了电阻线圈的电感$L_{1}$，以及线圈之间的寄生电容$C_{1}$。而内部
+引线电容$C_{2}$（或上个模型中的$C_{b}$）通常远小于线圈之间的寄生电容$C_{1}$，可以忽略。
+
+\begin{example}
+  求出用长$2.5cm$,AWG 26铜线连接的2$k\Omega$的金属膜电阻的高频阻抗特性，寄生电容$C_{a}$为$5pF$。
+  设铜的电导率$\sigma_{Cu}=6.45\times 10^7 S/m$。
+\end{example}
+\begin{solution}
+  已知AWG 26铜线的直径为$16mil$，所以其半径:
+  \begin{equation}
+   a=8mil= 8 \times (2.54 \times 10^{-5})  \text{m} = 2.032 \times 10^{-4} \text{m}=0.2032 mm  
+  \end{equation}。
+  铜的电导率$\sigma_{cond}=6.45\times 10^7 S/m$，真空的磁导率$\mu_0=4\pi \times 10^{-7} H/m$。
+ 使用下图所示的电路模型，其中$C_{b}$很小，一般忽略：
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.3\textwidth]{ex3电路模型.png}
+\end{figure}
+
+  根据外部电感近似计算公式可得引线电感$L_{ex}$为（注意：$l=2 \times$ 单根线长度，对应于两根连接导线的总长度）：
+  \begin{equation}
+    L_{ex} \approx \frac{\mu_0 l}{2\pi} \left[ \ln \left(\frac{2l}{a}\right) -1 \right] = \frac{4\pi \times 10^{-7} \times 0.05}{2\pi} \left[ \ln \left(\frac{0.1}{2.032 \times 10^{-4}}\right) -1 \right] = 52.0 nH
+  \end{equation}
+  高频电阻的阻抗$Z$可以表示为：
+  \begin{equation}
+    Z= j\omega L_{ex} + \left( \frac{1}{R} + j\omega C_{a} \right)^{-1}
+  \end{equation}
+  将各个参数代入上式，可得在不同频率下的高频电阻阻抗如下图所示：
+  \begin{figure}[h]
+  \centering
+  \includegraphics[width=0.4\textwidth]{高频电阻阻抗特性曲线.png}
+  \end{figure}
+\end{solution}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
