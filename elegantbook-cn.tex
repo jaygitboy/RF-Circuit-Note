@@ -366,9 +366,90 @@ J_z\approx \frac{pI}{2\pi aj\sqrt{r}}\exp \left( -\left( 1+j \right) \frac{a-r}{
   \end{figure}
 \end{solution}
 
+\section{高频电容}
 
+贴片式电容在滤波器调谐、匹配网络、类似晶体管的有源器件的偏置网络中得到了广泛的应用，常规
+电路分析理论对平行板电容器的定义如下：
+\begin{equation}
+  C= \frac{\varepsilon A}{d}=\varepsilon_0 \varepsilon_r \frac{A}{d}
+\end{equation}
+其中，$A$是平板的表面积，$d$是平板的间隔。理想情况下，平板间没有电流，但是在高频情况下，电介质变得有损耗了
+，即有传导电流存在，所以电容器的阻抗必须表示为电导$G_e$和电纳$\omega C$的并联组合：
+\begin{equation}
+  Z=\frac{1}{G_e + j\omega C}
+\end{equation}
+在这个表达式中，直流电流起源于电导$G_e=\sigma_{diel} \frac{A}{d}$，其中$\sigma_{diel}$是电介质的电导率。
 
+\begin{definition}{损耗角正切}{def:loss-tan}
+  损耗角正切$\tan \varDelta $定义为：
+  \begin{equation}
+    \tan \varDelta = \frac{G_e}{\omega C} = \frac{\sigma_{diel}}{\omega \varepsilon}
+  \end{equation}
+其表示了电容器的损耗程度。同时，损耗角正切也可以被定义为等效串联电阻（ESR）与电容电抗的比值
+ESR的阻值由下式给出：
+\begin{equation}
+  ESR = \frac{\tan \varDelta}{\omega C} 
+\end{equation}
+这说明当损耗角正切$\tan \varDelta $增大时，等效串联电阻也会增大。当损耗角正切$\tan \varDelta $趋于零时，等效串联电阻也趋于零，此时电容器可以被视为理想电容器。
+\end{definition}
 
+将损耗角正切的定义代入电容器的阻抗表达式中，可以得到：
+\begin{equation}
+  G_e = \frac{\sigma_{diel} A}{d}= \frac{\omega \varepsilon A}{d}\tan \varDelta = \omega C \tan \varDelta
+\end{equation}
+
+对于实际电路中的高频电容等效电路，通常还需要考虑引线电感$L$和引线电阻$R_s$,以及介质损耗电阻$R_e$的影响,如下图所示：
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.6\textwidth]{高频电容等效电路.png}
+\caption{高频电容的等效电路模型}
+\end{figure}
+其中，介质损耗电阻$R_e =  \frac{1}{G_e} $。
+
+\begin{example}
+  计算一个标称值为$10pF$的电容器的高频阻抗，电容器的介质是损耗角正切为$\tan \varDelta =10^{-4}$的氧化铝，
+电容器的引线是长$1.25cm$的AWG 26铜线。($\sigma_{Cu}=6.4516\times 10^7 S/m$)
+\end{example}
+
+\begin{solution}
+  已知AWG 26铜线的直径为$16mil$，所以其半径:
+  \begin{equation}
+   a=8mil= 8 \times (2.54 \times 10^{-5})  \text{m} = 2.032 \times 10^{-4} \text{m}=0.2032 mm  
+  \end{equation}
+  铜的电导率$\sigma_{cond}=6.45\times 10^7 S/m$，真空的磁导率$\mu_0=4\pi \times 10^{-7} H/m$。
+ 使用下图所示的电路模型，其中$R_e$由损耗角正切给出：
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.6\textwidth]{高频电容等效电路.png}
+\caption{高频电容的等效电路模型}
+\end{figure}
+  根据外部电感近似计算公式可得引线电感$L_{ex}$为（注意：$l=2 \times$ 单根线长度，对应于两根连接导线的总长度）：
+  \begin{equation}
+    L_{ex} \approx \frac{\mu_0 l}{2\pi} \left[ \ln \left(\frac{2l}{a}\right) -1 \right] = \frac{4\pi \times 10^{-7} \times 0.025}{2\pi} \left[ \ln \left(\frac{0.05}{2.032 \times 10^{-4}}\right) -1 \right] = 22.5 nH
+  \end{equation}
+  根据高频电阻的定义式可得引线电阻$R_s$为：
+  \begin{equation}
+    R_s = R_{dc} \cdot \frac{a}{2\delta} = \frac{l}{\sigma_{Cuu} \pi a^2} \cdot \frac{a}{2\delta} = \frac{l}{2\pi a \sigma_{Cu} \delta} = \frac{l}{2\pi a \sigma_{Cu}} \sqrt{\pi f \mu_{0}\sigma_{Cuu}}= \frac{l}{2a} \sqrt{\frac{ f \mu_{0}}{\pi \sigma_{Cu}}} 
+  \end{equation}
+  将各个参数代入上式，可得：
+  \begin{equation}
+    R_s = \frac{0.025}{2 \times 2.032 \times 10^{-4}} \sqrt{\frac{ f \times 4\pi \times 10^{-7}}{\pi \times 6.4516\times 10^7}} = 4.84 \times 10^{-6} \sqrt{\frac{f}{\text{Hz}}} (\Omega)=4.84\sqrt{\frac{f}{\text{Hz}}} (\mu \Omega)
+  \end{equation}
+  根据损耗角正切的定义式可得介质损耗电阻$R_e$为：
+  \begin{equation}
+    R_e =  \frac{1}{G_e} = \frac{1}{2\pi f \times C \tan \varDelta}= \frac{1}{2\pi f \times 47pF \times 10^{-4}}= \frac{3.39 \times 10^{7}}{f(\text{Hz})}(\text{M}\Omega)
+  \end{equation}
+  高频电容的阻抗$Z$可以表示为：
+  \begin{equation}
+    Z= j\omega L_{ex} + R_s + \left( \frac{1}{R_e} + j\omega C \right)^{-1}
+  \end{equation}
+  将各个参数代入上式，可得在不同频率下的高频电容阻抗如下图所示：
+  \begin{figure}[h]
+  \centering
+  \includegraphics[width=0.4\textwidth]{高频电容阻抗特性曲线.png}
+  \end{figure}
+\end{solution}
 
 
 
