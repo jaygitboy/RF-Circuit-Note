@@ -450,13 +450,116 @@ ESR的阻值由下式给出：
   \includegraphics[width=0.4\textwidth]{高频电容阻抗特性曲线.png}
   \end{figure}
 \end{solution}
+\newpage
+\section{高频电感}
+高频电感器常用于晶体管的偏置网络，可作为射频扼流圈将晶体管与直流电压相连接。因为线圈通常是由导线绕制而成的，
+所以高频电感器的等效电路模型需要考虑与频率有关的电阻，电感，以及相邻导线之间的分布电容。
+
+其等效电路模型如图所示，并联寄生电容$C_s$模拟了相邻导线之间的分布电容，串联电阻$R_s$模拟了导线的高频电阻，
+串联电感$L$模拟了导线的高频电感：
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.5\textwidth]{高频电感等效电路.png}
+\caption{高频电感的等效电路模型}
+\end{figure}
+
+高频电感的阻抗$Z$可以表示为：
+\begin{equation}
+  Z= \frac{1}{(R_s + j\omega L )^{-1}+ j\omega C_s }
+\end{equation}
+
+\begin{example}
+  射频扼流圈的射频阻抗响应
+
+  已知：射频扼流圈的直径为0.1英寸（空气芯），N=3.5匝，线径为AWG 36铜线。
+  假设线圈的长度为0.05英寸，这个射频扼流圈的并联寄生电容为$0.3pF$求出该射频扼流圈的高频阻抗特性。
+
+\end{example}
 
 
+\begin{solution}
+
+  已知AWG 36铜线的直径为$5mil$，所以其半径:
+  \begin{equation}
+   a=2.5mil= 2.5 \times (2.54 \times 10^{-5})  \text{m} = 6.35 \times 10^{-5} \text{m}=0.0635 mm=63.5 \mu m  
+  \end{equation}
+  线圈的长度$l=0.05inch=0.00127m$，线圈的半径$r=0.1inch/2=0.00127 m$。
+  铜的电导率$\sigma_{cond}=6.45\times 10^7 S/m$，真空的磁导率$\mu_0=4\pi \times 10^{-7} H/m$。
 
 
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.4\textwidth]{射频扼流圈 .png}
+\caption{射频扼流圈的结构示意图}
+\end{figure}
 
+  估算线圈的电感通常有两个公式，一个是空气芯长线圈的近似公式，一个是短线圈的近似公式：
+\begin{equation}  
+  L \approx \frac{\mu_0 N^2 A}{l} \quad \text{(长线圈)} (r\ll l)
+\end{equation}
+\begin{equation}
+  L \approx \frac{\mu_0 N^2 A}{l+0.9r} \quad \text{(短线圈)} 
+\end{equation}
+其中，$A= \pi r^2$是线圈的截面积，$l$是线圈的长度，$r$是线圈的半径。
+带入计算可得：
+\begin{equation}
+  L \approx \frac{4\pi \times 10^{-7} \times 3.5^2 \times \pi \times (0.00127)^2}{0.00127+0.9 \times 0.00127} = 32.3 nH
+\end{equation}
+  根据高频电阻的定义式可得引线电阻$R_s$为：
+  \begin{equation}
+    R_s = R_{dc} \cdot \frac{a}{2\delta} = \frac{l}{\sigma_{Cuu} \pi a^2} \cdot \frac{a}{2\delta} = \frac{l}{2\pi a \sigma_{Cu} \delta} = \frac{l}{2\pi a \sigma_{Cu}} \sqrt{\pi f \mu_{0}\sigma_{Cuu}}= \frac{l}{2a} \sqrt{\frac{ f \mu_{0}}{\pi \sigma_{Cu}}} 
+  \end{equation}
+  将各个参数代入上式，并忽略趋肤效应，可得：
+  \begin{equation}  
+    R_s = 0.034 \Omega
+  \end{equation}
+  故可以得到射频扼流圈的阻抗的频率响应曲线如下图所示：
+  \begin{figure}[h]
+  \centering
+  \includegraphics[width=0.4\textwidth]{高频电感频率响应.png}
+  \end{figure}
 
+  \end{solution}
 
+  \begin{remark}
+    从上图可以看出，在高频频段，射频扼流圈的特性偏离了理想电感的特性，主要原因是寄生电容$C_s$的存在。
+    使得在高频下，当工作频率接近谐振点时，射频扼流圈的阻抗迅速增大。当工作频率继续增高时，
+    由于$C_s$的影响占据主导，阻抗开始下降。
+  \end{remark}
+
+\begin{definition}{品质因数}
+  假如高频电感的串联电阻$R_s$为零，那么谐振时电感的阻抗将趋于无穷大。实际上，由于导线的电阻以及其他损耗的存在，
+  高频电感的阻抗在谐振时是有限的。为了衡量高频电感的损耗情况，引入了品质因数$Q$的概念
+  
+  高频电感的品质因数$Q$定义为：
+  \begin{equation}
+    Q = \frac{|X|}{R_s}=\frac{\omega L}{R_s}
+  \end{equation}
+  其中，$|X|$是电感的电抗，$R_s$是电感的等效串联电阻。
+\end{definition}
+
+\section{贴片元件及电路板}
+常用的贴片元件有贴片电阻，贴片电容，表面安装电感器等。它们的封装尺寸通常以英寸为单位进行标识，
+封装尺寸如下表所示：
+\begin{table}[htbp]
+  \centering
+    \begin{tabular}{ccc}
+    \toprule
+    封装尺寸代码 & 长度$L$(mil) & 宽度$W$(mil) \\
+    \midrule
+    0201 & 20 & 10 \\
+    0402 & 40 & 20 \\
+    0603 & 60 & 30 \\
+    0805 & 80 & 50 \\
+    1206 & 120 & 60 \\
+    1812 & 180 & 120 \\
+    \bottomrule
+    \end{tabular}
+  \label{贴片式电阻的标准尺寸}
+\end{table}
+\begin{note}
+  $1 mil = 0.001 \text{ inch} = 2.54\times 10^{-5} \text{ m}$
+\end{note}
 
 
 
