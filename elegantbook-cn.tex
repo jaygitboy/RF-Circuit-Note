@@ -830,12 +830,135 @@ Z_{\mathrm{in}}(d) = Z_0 \frac{Z_L + jZ_0 \tan(\beta d)}{Z_0 + jZ_L \tan(\beta d
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%第三章 史密斯圆图 -by ZXY
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{史密斯圆图}
+
+\begin{introduction}
+  \item 反射系数与负载阻抗
+  \item 阻抗变换
+  \item 导纳变换
+  \item 并联和串联电路
+\end{introduction}
+
+\section{反射系数与负载阻抗}
+根据传输线理论可知，反射系数定义为传输线上某确定位置的反射电压波与入射电压波之比，
+特别关注的是负载端（$d=0$）的反射系数$\Gamma_0$，描述了特征阻抗$Z_0$与负载阻抗$Z_L$之间的失配关系。
+
+当沿着d正方向从负载向传输线始端移动时，反射系数的变化规律为：
+\begin{equation}
+  \Gamma(d) = \Gamma_0 e^{-2j\beta d}
+\end{equation}
+其中$\beta$为相位常数，$d$为距离负载端的距离。
+
+\subsection{复数形式的反射系数}
+为了便于在复平面上表示反射系数，我们将反射系数表示为其实部和虚部的形式：
+\begin{equation}
+  \Gamma_0 = \frac{Z_L - Z_0}{Z_L + Z_0}=\Gamma_0r + j\Gamma_0i=|\Gamma_0|e^{j\theta_L}
+\end{equation}
+$\Gamma_0r$为反射系数的实部，$\Gamma_0i$为反射系数的虚部，$|\Gamma_0|$为反射系数的模，$\theta_L= \arctan \frac{\Gamma_0i}{\Gamma_0r}$为反射系数的幅角。
+
+\begin{remark}
+  上式引入了复数的极坐标形式，便于在复平面上表示反射系数。对于理想短路和理想开路负载，
+  反射系数分别为$-1$和$+1$，它们都位于实轴上。
+\end{remark}
+
+\begin{example}
+  反射系数表示法
+
+  已知某传输线的特征阻抗$Z_0 = 50 \Omega$，终端接有下列负载阻抗：
+  \begin{enumerate}
+    \item $Z_L = 0 \Omega$
+    \item $Z_L = \infty$
+    \item $Z_L = 50\Omega$
+    \item $Z_L = 16.67 - j16.67 \Omega$
+    \item $Z_L = 50 + j150 \Omega$
+\end{enumerate}
+  求各负载阻抗对应的反射系数$\Gamma_0$，并在$\Gamma$复平面上表示出来他们的位置。
+    
+\end{example}
+
+\begin{solution}
+  根据反射系数的定义式可得：
+  \begin{enumerate}
+    \item $Z_L = 0 \Omega$时，$\Gamma_0 = \frac{0 - 50}{0 + 50} = -1$（终端开路）
+    \item $Z_L = \infty$时，$\Gamma_0 = \frac{\infty - 50}{\infty + 50} = 1$（终端短路）
+    \item $Z_L = 50\Omega$时，$\Gamma_0 = \frac{50 - 50}{50 + 50} = 0$（匹配）
+    \item $Z_L = 16.67 - j16.67 \Omega$时，$\Gamma_0 = \frac{(16.67 - j16.67) - 50}{(16.67 - j16.67) + 50} = 0.54\angle 221°$
+    \item $Z_L = 50 + j150 \Omega$时，$\Gamma_0 = \frac{(50 + j150) - 50}{(50 + j150) + 50} = 0.83\angle 34°$
+ \end{enumerate}
+
+  将上述结果在$\Gamma$复平面上表示出来，如下图所示：
+  \begin{figure}[b]
+  \centering
+  \includegraphics[width=0.25\textwidth]{反射系数复平面表示.png}
+  \end{figure}
+\end{solution}
+
+\subsection{归一化阻抗公式}
+对于输入阻抗的一般表达式：
+\begin{equation}
+  Z_{in}(d) = Z_0 \frac{1 + \Gamma(d)}{1 - \Gamma(d)}
+\end{equation}
+带入$\Gamma(d) = |\Gamma_0| e^{j\theta_L} e^{-2 j\beta d}=\Gamma_r + j\Gamma_i$，得到输入阻抗的表达式：
+\begin{equation}
+  Z_{in}(d) = Z_0 \frac{1 + \Gamma_r + j\Gamma_i}{1 - \Gamma_r - j\Gamma_i}
+\end{equation}
+
+\begin{definition}{归一化阻抗}{def:normalized-impedance}
+  利用传输线的特征阻抗$Z_0$对输入阻抗进行归一化，得到归一化阻抗$z_{in}$的表达式：
+  \begin{equation}
+    z_{in}(d) = \frac{Z_{in}(d)}{Z_0} = r+ jx=\frac{1 + \Gamma_r + j\Gamma_i}{1 - \Gamma_r - j\Gamma_i}
+  \end{equation}
+  上述公式表示从一个复平面到另一个复平面的映射，即从$z_{in}$平面到$\Gamma$平面
+  的映射。
+
+  化简可以得到$z_{in}$的实部和虚部：
+  \begin{equation}
+    r = \frac{1 - \Gamma_r^2 - \Gamma_i^2}{(1 - \Gamma_r)^2 + \Gamma_i^2}
+  \end{equation}
+  \begin{equation}
+    x = \frac{2\Gamma_i}{(1 - \Gamma_r)^2 + \Gamma_i^2}
+  \end{equation}
+
+\end{definition}
+
+\subsection{反射系数的参量方程}
+为了将$z_{in}$平面上的点映射到$\Gamma$平面上，我们需要将上述实部和虚部的方程进行变换，消去$r$或$x$，用反射系数的实部和虚部$\Gamma_r$和 $\Gamma_i$ 来表示。
+\begin{theorem}{反射系数的参量方程}{thm:reflection-coefficient-parametric-equation}
+  反射系数的参量方程为：
+  \begin{equation}
+    (\Gamma_r - \frac{r}{r+1})^2 + \Gamma_i^2 = (\frac{1}{r+1})^2
+  \end{equation}
+  \begin{equation}
+    (\Gamma_r - 1)^2 + (\Gamma_i - \frac{1}{x})^2 = (\frac{1}{x})^2
+  \end{equation}
+  上述两式将归一化阻抗平面上的点映射到$\Gamma$平面上，分别表示恒定实部$r$和恒定虚部$x$的圆。
+\end{theorem}
+下面两个图分别表示恒定实部$r$和恒定虚部$x$的圆的映射过程：
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.45\textwidth]{恒定实部r的圆映射.png}
+\includegraphics[width=0.45\textwidth]{恒定虚部x的圆映射.png}
+\caption{恒定实部$r$和恒定虚部$x$的圆的映射过程}
+\end{figure}
+
+\begin{note}
+  \begin{enumerate}
+    \item 恒定实部$r$的圆心为$(\frac{r}{r+1},0)$，半径为$\frac{1}{r+1}$,当$r$
+    不断增大时，圆心不断向右移动，半径不断减小，在$r \to \infty$时，圆心趋近于$(1,0)$，半径趋近于0。
+    \item 恒定虚部$x$的圆心为$(1,\frac{1}{x})$，半径为$\frac{1}{x}$。阻抗平面的各条直线映射为
+    $\Gamma$平面的各条圆弧，这些圆弧的圆心都在$\Gamma_r=1$的垂直于实轴的直线上。
+    \item 代表容性阻抗的负虚部$x<0$的圆弧位于实轴的下方，代表感性阻抗的正虚部$x>0$的圆弧位于实轴的上方。
+  \end{enumerate}
+\end{note}
 
 
-
-
-
-
+\subsection{图解表示法}
 
 
 
