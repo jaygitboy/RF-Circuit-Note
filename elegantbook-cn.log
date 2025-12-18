@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.3.27)  18 DEC 2025 13:17
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.3.27)  18 DEC 2025 13:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1511,59 +1511,97 @@ File: ./image/高频电感频率响应.png Graphic file (type bmp)
 <./image/高频电感频率响应.png>
  [10]
 Chapter 2.
-LaTeX Font Info:    Font shape `TU/texgyretermes(0)/m/n' will be
-(Font)              scaled to size 8.0pt on input line 627.
-LaTeX Font Info:    Font shape `TU/texgyretermes(0)/m/n' will be
-(Font)              scaled to size 6.0pt on input line 627.
+File: ./image/传输线等效电路.png Graphic file (type bmp)
+<./image/传输线等效电路.png>
+File: ./image/双线传输线.png Graphic file (type bmp)
+<./image/双线传输线.png>
 [11
 
-] [12]
-LaTeX Font Info:    Font shape `TU/texgyretermes(0)/m/it' will be
-(Font)              scaled to size 10.0pt on input line 735.
- [13] [14]
-
-LaTeX Warning: Citation 'cn1' on page 15 undefined on input line 911.
-
-
-LaTeX Warning: Citation 'en2' on page 15 undefined on input line 911.
+]
+File: ./image/同轴传输线.png Graphic file (type bmp)
+<./image/同轴传输线.png>
+LaTeX Font Info:    Font shape `TU/texgyretermes(0)/b/it' will be
+(Font)              scaled to size 12.0pt on input line 611.
 
 
-LaTeX Warning: Citation 'en3' on page 15 undefined on input line 911.
+LaTeX Font Warning: Font shape `TU/SimSun(0)/b/it' undefined
+(Font)              using `TU/SimSun(0)/b/n' instead on input line 611.
 
-[15]
-LaTeX Font Info:    Font shape `TU/texgyretermes(0)/m/n' will be
-(Font)              scaled to size 14.4pt on input line 989.
- [16] [17]
+File: ./image/电场泄露和介电常数的关系.png Graphic file (type bmp)
+<./image/电场泄露和介电常数的关系.png>
+File: ./image/三种类型传输线参数.png Graphic file (type bmp)
+<./image/三种类型传输线参数.png>
+[12]
+File: ./image/微带线特征阻抗和wh的关系.png Graphic file (type bmp)
+<./image/微带线特征阻抗和wh的关系.png>
+ [13]
+File: ./image/电压回路和电流节点.png Graphic file (type bmp)
+<./image/电压回路和电流节点.png>
+ [14]
+File: ./image/传输线反射示意图.png Graphic file (type bmp)
+<./image/传输线反射示意图.png>
+
+
+LaTeX Warning: Reference `eq:voltage-wave' on page 15 undefined on input line 778.
+
+
+LaTeX Warning: Reference `eq:current-wave' on page 15 undefined on input line 778.
+
+[15] [16]
 Chapter 3.
-[18
+LaTeX Font Info:    Font shape `TU/texgyretermes(0)/m/n' will be
+(Font)              scaled to size 8.0pt on input line 882.
+LaTeX Font Info:    Font shape `TU/texgyretermes(0)/m/n' will be
+(Font)              scaled to size 6.0pt on input line 882.
+[17
+
+] [18]
+LaTeX Font Info:    Font shape `TU/texgyretermes(0)/m/it' will be
+(Font)              scaled to size 10.0pt on input line 990.
+ [19] [20]
+
+LaTeX Warning: Citation 'cn1' on page 21 undefined on input line 1166.
+
+
+LaTeX Warning: Citation 'en2' on page 21 undefined on input line 1166.
+
+
+LaTeX Warning: Citation 'en3' on page 21 undefined on input line 1166.
+
+[21]
+LaTeX Font Info:    Font shape `TU/texgyretermes(0)/m/n' will be
+(Font)              scaled to size 14.4pt on input line 1244.
+ [22] [23]
+Chapter 4.
+[24
 
 ]
 File: ./image/founder.png Graphic file (type bmp)
 <./image/founder.png>
- [19] [20]
-Chapter 4.
-[21
+ [25] [26]
+Chapter 5.
+[27
 
 ]
 File: ./image/scatter.jpg Graphic file (type bmp)
 <./image/scatter.jpg>
- [22] [23]
-Chapter 5.
-[24
+ [28] [29]
+Chapter 6.
+[30
 
 ]
-Chapter 6.
+Chapter 7.
 LaTeX Font Info:    Font shape `TU/texgyretermes(0)/b/n' will be
-(Font)              scaled to size 9.0pt on input line 1275.
-[25
+(Font)              scaled to size 9.0pt on input line 1530.
+[31
 
-] [26]
+] [32]
 
-LaTeX Warning: Empty bibliography on input line 1434.
+LaTeX Warning: Empty bibliography on input line 1689.
 
-[27]
+[33]
 附录 A.
-[28
+[34
 
 ] (./elegantbook-cn.aux)
  ***********
@@ -1580,8 +1618,14 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package rerunfilecheck Info: File `elegantbook-cn.out' has not changed.
-(rerunfilecheck)             Checksum: FD29F09162EB726C1F54EF47D7A3DAFA;5789.
+
+Package rerunfilecheck Warning: File `elegantbook-cn.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `elegantbook-cn.out':
+(rerunfilecheck)             Before: FD29F09162EB726C1F54EF47D7A3DAFA;5789
+(rerunfilecheck)             After:  69F9E0439E2B1B80E36799205E045222;8151.
 
 Package biblatex Warning: Please (re)run Biber on the file:
 (biblatex)                elegantbook-cn
@@ -1592,12 +1636,12 @@ Package logreq Info: Writing requests to 'elegantbook-cn.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 48835 strings out of 474761
- 1034607 string characters out of 5761074
- 2081439 words of memory out of 5000000
- 70178 multiletter control sequences out of 15000+600000
- 568642 words of font info for 136 fonts, out of 8000000 for 9000
+ 49001 strings out of 474761
+ 1040698 string characters out of 5761074
+ 2081467 words of memory out of 5000000
+ 70335 multiletter control sequences out of 15000+600000
+ 568650 words of font info for 137 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  103i,18n,108p,683b,2324s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on elegantbook-cn.pdf (31 pages).
+Output written on elegantbook-cn.pdf (37 pages).

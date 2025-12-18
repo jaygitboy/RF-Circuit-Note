@@ -562,6 +562,261 @@ ESR的阻值由下式给出：
 \end{note}
 
 
+\chapter{传输线理论}
+\section{传输线理论的本质}
+\subsection{集中参数理论与分布参数理论}
+\begin{theorem}{集中参数理论与分布参数理论}{axi:lump}
+当电路元件的特征尺寸超过电磁波波长的1/10左右时，基尔霍夫电路理论（集中参数）必须由分布参数的波动理论替代。
+   \begin{equation}
+    l_A >= \lambda / 10
+  \end{equation} 
+
+\end{theorem}
+
+因此，我们为了便于在射频与微波频段下对电路进行分析与设计，引入了将电路无限细分的方法，以继续使用基尔霍夫电路理论进行电路分析与设计。
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.4\textwidth]{传输线等效电路.png}
+\caption{传输线等效电路}
+\end{figure}
+
+其中C来源于导线间的电容效应，G来源于介质中的微小电流。这种等效模型并非适用于所有情形，比如当涉及到瞬态信号的传播及感性容性串扰产生的信号完整性问题时，常增加一个电感接地。
+
+\begin{remark}
+电路中所有参数都是单位长度的值。
+\end{remark}
+
+\subsection{理论基础}
+求解分布电路参数的方法就是求解麦克斯韦方程组，只需知道这点就够了。书上P39-P40是一个简单的
+求解平行板电容器参数的例子。
+
+\section{传输线实例}
+\subsection{双线传输线}
+长距离传输会使用。由于导体辐射的电力线和磁力线延伸到无穷远，双线传输线会影响到附近其他电子设备，并且辐射损耗非常高。
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.4\textwidth]{双线传输线.png}
+\caption{双线传输线}
+\end{figure}
+
+
+\subsection{同轴传输线}
+辐射损耗和电磁干扰小，较为常用。
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.4\textwidth]{同轴传输线.png}
+\caption{同轴传输线}
+\end{figure}
+
+\subsection{微带传输线 \emph{（重要）}}
+微带线即刻蚀在平面印刷电路板上的导带，携带电流的导带下面的接地平面可以阻止过多
+的电磁场泄露，从而降低辐射损耗。其损耗严重程度与相对介电常数有关。
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.4\textwidth]{电场泄露和介电常数的关系.png}
+\caption{电场泄露和介电常数的关系}
+\end{figure}
+
+可以将上述三种传输线的特性总结为如下表格：
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\textwidth]{三种类型传输线参数.png}
+\caption{三种类型传输线参数}
+\end{figure}
+
+其中$\sigma_{cond}$为导体的电导率，$\sigma_{diel}$为介质的电导率。
+\subsection{微带线的设计}
+在上面表格中将微带线作为平行板电容器，但若微带线基片厚度h增加或导体宽度w减小
+，边缘效应不可忽略，因此提出微带线特征阻抗（见后）的近似模型。
+\begin{note}{微带线特征阻抗的近似模型}
+\begin{enumerate}
+    \item 根据给定 $Z_0$ 和 $\epsilon_r$ 的值读图得到 $w/h$ 的大致范围
+
+    \item 若$w/h <= 2$，则：
+    \begin{equation} 
+      \frac{w}{h} = \frac{8e^A}{e^{2A}-2} 
+    \end{equation}
+    其中A为：
+    \begin{equation}
+       A = 2\pi \frac{Z_0}{Z_f} \sqrt{\frac{\varepsilon_r + 1}{2}} + \frac{\varepsilon_r - 1}{\varepsilon_r + 1}\left(0.23 + \frac{0.11}{\varepsilon_r}\right) 
+    \end{equation}
+    若$w/h > 2$，则：
+    \begin{equation}
+    \frac{w}{h} = \frac{2}{\pi}\left[B - 1 - \ln(2B - 1) + \frac{\varepsilon_r - 1}{2\varepsilon_r}\left(\ln(B - 1) + 0.39 - \frac{0.61}{\varepsilon_r}\right)\right]
+    \end{equation}
+     其中B为：
+    \begin{equation}
+       B = \frac{Z_f \pi}{2 Z_0 \sqrt{\varepsilon_r}} 
+    \end{equation}
+    $Z_f$为自由空间中的波阻抗：
+    \begin{equation}
+      Z_f = \sqrt{\frac{\mu _r}{\varepsilon _r}} = 376.8 \Omega
+    \end{equation}
+    \item 根据求出来的$w/h$的结果，求解特征阻抗：
+  
+    $w/h<1$时：
+    \begin{equation}
+    Z_{0} = \frac{Z_{f}}{2\pi \sqrt{\varepsilon_{eff}}} \ln \left(8 \frac{h}{w} + \frac{w}{4h}\right)
+    \end{equation}  
+    \begin{equation}
+    \varepsilon_{\mathrm{eff}} = \frac{\varepsilon_r + 1}{2} + \frac{\varepsilon_r - 1}{2} \left[ (1 + 12\frac{h}{w})^{-1/2} + 0.04(1 - \frac{w}{h})^2 \right]
+    \end{equation}
+
+    $w/h>1$时：
+    \begin{equation}
+      Z_0 = \frac{Z_f}{\sqrt{\varepsilon_{\mathrm{eff}}} (1.393 + \frac{w}{h} + \frac{2}{3} \ln(\frac{w}{h} + 1.444))}
+    \end{equation}
+    \begin{equation}
+      \varepsilon_{\mathrm{eff}} = \frac{\varepsilon_r + 1}{2} + \frac{\varepsilon_r - 1}{2} (1 + 12\frac{h}{w})^{-1/2}
+    \end{equation}
+
+    $w/h=1$时，上面两式求出的特征阻抗不连续，引起误差小于0.5\%，因此可以用上面任意方法求解特征阻抗。
+\end{enumerate}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.6\textwidth]{微带线特征阻抗和wh的关系.png}
+\caption{微带线特征阻抗和w/h的关系}
+\end{figure}
+\end{note}
+
+\section{传输线方程}
+\subsection{基尔霍夫电压电流定律}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.6\textwidth]{电压回路和电流节点.png}
+\caption{电压回路和电流节点}
+\end{figure}
+对上面电路，列出电压电流方程：
+\begin{equation}
+ (R + j\omega L)I(z)\Delta z + V(z + \Delta z) = V(z)
+\end{equation}
+\begin{equation}
+I(z) - V(z + \Delta z)(G + j\omega C)\Delta z = I(z + \Delta z)
+\end{equation}
+化为微分形式：
+\begin{equation}
+\lim_{\Delta z \to 0} \left(-\frac{V(z+\Delta z) - V(z)}{\Delta z}\right) = -\frac{dV(z)}{dz} = (R + j\omega L)I(z)
+\end{equation}
+\begin{equation}
+\lim_{\Delta z \to 0} \frac{I(z + \Delta z) - I(z)}{\Delta z} = \frac{dI(z)}{dz} = -(G + j\omega C)V(z)
+\end{equation}
+对这两个微分方程进行分离（两边再求导）：
+\begin{equation}
+  \frac{d^2V(z)}{dz^2} - \gamma^2 V(z) = 0
+\end{equation}
+\begin{equation}
+  \frac{d^2I(z)}{dz^2} - \gamma^2 I(z) = 0
+\end{equation}
+
+电压解为：
+\begin{equation}
+  V(z) = V^{+}e^{-\gamma z} + V^{-}e^{+\gamma z}
+\end{equation}
+
+电流解为：
+\begin{equation}
+  I(z) = I^{+}e^{-\gamma z} + I^{-}e^{+\gamma z}
+\end{equation}
+它们可以被视为正向传播和反相传播的电压波和电流波。
+\begin{definition}{传播常数}{def:propagation-constant}
+$\gamma$ 为复传播常数，定义为：
+\begin{equation}
+  \gamma = \alpha + j\beta = \sqrt{(R + j\omega L)(G + j\omega C)}
+\end{equation}
+$\alpha$代表衰减系数，$\beta$代表相位常数。
+
+对于无损传播线，$\alpha = 0$，$\beta = \omega \sqrt{LC}$,传播常数变为
+，电压电流表达式中的$\gamma$也就转换为了$j\beta$。
+\end{definition}
+根据上述我们对于$\beta$的定义，可以得到相速度$v_p$的表达式：
+\begin{equation}
+  v_{p} = \frac{dz}{dt} = \frac{\omega}{\beta} = \frac{1}{\sqrt{LC}}
+\end{equation}
+
+\subsection{特征阻抗}
+将电压表达式代入微分方程，可发现电压和电流的关系：
+\begin{equation}
+ I(z) = \frac{\gamma}{R + j \omega L}(V^{+} e^{-\gamma z} - V^{-} e^{+\gamma z})
+ = \frac{1}{Z_0}(V^{+} e^{-\gamma z} - V^{-} e^{+\gamma z})
+\end{equation}
+
+\begin{definition}{特征阻抗}{def:characteristic-impedance}
+特征阻抗 $Z_0$ 定义为电压与电流之比：
+\begin{equation}
+  Z_0 = \frac{V^{+}}{I^{+}} = -\frac{V^{-}}{I^{-}} = \sqrt{\frac{R + j\omega L}{G + j\omega C}}
+\end{equation}
+对于无损传播线，$R = G = 0$，特征阻抗简化为：
+\begin{equation}
+  Z_0 = \sqrt{\frac{L}{C}}
+\end{equation}
+\end{definition}
+
+\section{终端加载的无损耗传输线（重要）}
+\subsection{反射系数与输入阻抗}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.6\textwidth]{传输线反射示意图.png}
+\caption{传输线反射示意图}
+\end{figure}
+上图为最常见传输线的电路形式，值得注意的是靠近负载端的位置为$z=0$，靠近源端的位置为$z=-l$。
+\begin{definition}{反射系数}{def:reflection-coefficient}
+  反射系数 $\Gamma_0$ 定义为：
+  \begin{equation}
+    \Gamma_0 = \frac{V^-}{V^+}
+  \end{equation}
+\end{definition}
+根据这个定义，电压波和电流波的表达式可以化为：
+\begin{equation}
+  V(z) = V^{+}\left(e^{-\gamma z} + \Gamma_{0}e^{+\gamma z}\right)
+   \label{eq:voltage-wave}
+\end{equation}
+\begin{equation}
+I(z) = \frac{V^{+}}{Z_{0}}\left(e^{-\gamma z} - \Gamma_{0}e^{+\gamma z}\right)
+\label{eq:current-wave}
+\end{equation}
+
+将式\ref{eq:voltage-wave}除以式\ref{eq:current-wave}可以得到输入阻抗$Z_{in}$的表达式：
+\begin{equation}
+  Z_{in} = \frac{V(z)}{I(z)} = Z_0 \frac{e^{-\gamma z} + \Gamma_0 e^{+\gamma z}}{e^{-\gamma z} - \Gamma_0 e^{+\gamma z}}
+\end{equation}
+负载处输入阻抗表达式为：
+\begin{equation}
+  Z_L = Z_{in}(0) = \frac{V(0)}{I(0)} = Z_0 \frac{1 + \Gamma_0}{1 - \Gamma_0}
+\end{equation}
+反推出反射系数的表达式：
+\begin{equation}
+  \Gamma_0 = \frac{Z_L - Z_0}{Z_L + Z_0}
+\end{equation}
+在无损传播线中，$Z_{in}$进一步化简，这也就是最终的终端加载无损传输线的输入
+阻抗的最终表达式：
+\begin{equation}
+Z_{\mathrm{in}}(d) = \frac{V(d)}{I(d)} = Z_0 \frac{V^{+}e^{j\beta d}(1 + \Gamma_0 e^{-2j\beta d})}{V^{+}e^{j\beta d}(1 - \Gamma_0 e^{-2j\beta d})}
+= Z_0 \frac{1 + \Gamma(d)}{1 - \Gamma(d)}
+\end{equation}
+其中$\Gamma(d)$是更为一般的反射系数的表达式，为：
+\begin{equation}
+  \Gamma(d) = \Gamma_0 e^{-2 j\beta d}
+\end{equation}
+进一步将$\Gamma$消去，得到：
+\begin{equation}
+Z_{\mathrm{in}}(d) = Z_0 \frac{Z_L + jZ_0 \tan(\beta d)}{Z_0 + jZ_L \tan(\beta d)}
+\end{equation}
+根据这个重要结果，可以推算负载阻抗沿着传输线的变换规律。其中$\beta d$我们称为电长度。
+
+\subsection{典型终端条件}
+\subsubsection{终端短路的传输线}
+当终端短路时，$Z_L = 0$，则反射系数为：
+\begin{equation}
+  \Gamma_0 = \frac{Z_L - Z_0}{Z_L + Z_0} = \frac{-Z_0}{Z_0} = -1
+\end{equation}
+此时输入阻抗为：
+\begin{equation}
+  Z_{in}(d) =  jZ_0 \tan(\beta d)
+\end{equation}
+这表明在终端短路的情况下，输入阻抗为零，即传输线的末端被短路。
+
+
+
 
 
 
