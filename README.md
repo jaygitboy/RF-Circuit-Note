@@ -1,34 +1,30 @@
-<!-- Author : Dongsheng Deng & Liam Huang-->
-<!-- Program Email: elegantlatex2e@gmail.com -->
+# RF Circuit Design: Theory and Application Notes
 
-[Homepage](https://elegantlatex.org/) | [Github](https://github.com/ElegantLaTeX/ElegantBook) | [CTAN](https://ctan.org/pkg/elegantbook) | [Download](https://github.com/ElegantLaTeX/ElegantBook/releases) | [Wiki](https://github.com/ElegantLaTeX/ElegantBook/wiki) | [Weibo](https://weibo.com/elegantlatex)
+This repository contains a LaTeX document serving as **open-book exam preparation materials and comprehensive review notes** for the course *RF and Microwave Circuits*, offered by the **School of Integrated Circuits, Huazhong University of Science and Technology (HUST)**.
 
-![License](https://img.shields.io/ctan/l/elegantbook.svg) ![CTAN Version](https://img.shields.io/ctan/v/elegantbook.svg) ![Github Version](https://img.shields.io/github/release/ElegantLaTeX/ElegantBook.svg) ![Repo Size](https://img.shields.io/github/repo-size/ElegantLaTeX/ElegantBook.svg)
+The notes are primarily intended to help students systematically review key theoretical concepts, circuit analysis methods, and practical design considerations in RF and microwave circuit design. They are also suitable as a quick reference during open-book examinations and for self-study.
 
--------
+The official textbook used in this course is:
 
-# ElegantBook: An Elegant LaTeX Template for Books
+**RF Circuit Design: Theory and Application (2nd Edition)**
 
-ElegantBook is designed for writing books, created by [Dongsheng Deng](https://ddswhu.me/) and [Liam Huang](https://liam.page/). Just enjoy it! If you have any questions, suggestions or bug reports, you can create issues or contact us at elegantlatex2e@gmail.com.
+This document closely follows the structure and core topics of the textbook, while incorporating summarized derivations, clarified explanations, and exam-oriented highlights.
 
-## Important Notes
+---
 
-For some reasons, __unauthorized__ pull requests are **UNACCEPTABLE** since May 20, 2019. For those who want to help revise the templates, submit issues or clone to your own repository to modify under the LPPL-1.3c.
+## Authors
 
-## Acknowledgement
+ZXY & HHX
 
-Thank [sikouhjw](https://github.com/sikouhjw) and [syvshc](https://github.com/syvshc) for their quick response to Github issues and continuously support work for ElegantLaTeX.
-
-Thank ChinaTeX and [LaTeX Studio](http://www.latexstudio.net/) for their promotion. 
-
+---
 
 ## License
 
-This work is released under the LaTeX Project Public License, v1.3c or later.
+This template is released under the **LaTeX Project Public License (LPPL), version 1.3c or later**.
 
+If you create derivative works based on this template or document, please ensure that:
+- The license statement is retained;
+- Proper attribution to the original template is included;
+- Relevant template information is provided, such as the GitHub repository and/or CTAN entry.
 
-## Derivative Works
-
-+ [ElegantBookdown](https://github.com/XiangyunHuang/ElegantBookdown)：[XiangyunHuang](https://github.com/XiangyunHuang) developed a Bookdown template based on ElegantBook.
-+ [bookdownplus](https://github.com/pzhaonet/bookdownplus): maintained by [pzhaonet](https://github.com/pzhaonet).
-+ [PanBook](https://github.com/annProg/PanBook)：a markdown-based writing workflow Developed by [annProg](https://github.com/annProg).
+This helps maintain proper academic and open-source attribution within the LaTeX community.
