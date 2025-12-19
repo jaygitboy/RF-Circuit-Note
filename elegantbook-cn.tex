@@ -1054,8 +1054,91 @@ $\Gamma_0r$为反射系数的实部，$\Gamma_0i$为反射系数的虚部，$|\G
   通过史密斯圆图得到的是近似的结果，虽然不如解析计算精确，但是利用软件就能快速的完成高精度的计算。
 \end{remark}
 
+\subsection{驻波系数}
+传输线任意位置$d$的驻波系数（SWR）定义为传输线该处上最大电压与最小电压之比：
+\begin{equation}
+  SWR = \frac{V_{max}}{V_{min}} = \frac{1 + |\Gamma(d)|}{1 - |\Gamma(d)|}
+\end{equation}
+其中，$|\Gamma(d)|$为该位置处的反射系数的幅度，$|\Gamma(d)|$可以利用上式反解出：
+\begin{equation}
+  |\Gamma(d)| = \frac{SWR - 1}{SWR + 1}
+\end{equation}
 
 
+\begin{remark}
+  \begin{enumerate}
+    \item 驻波系数的取值范围为$1 \leq SWR < \infty$，当传输线完全匹配时，$|\Gamma(d)| = 0$，此时$SWR = 1$；
+      当传输线完全失配时，$|\Gamma(d)| = 1$，此时$SWR \to \infty$。
+    \item SWR的表达式与给定反射系数求阻抗的表达式形式相似，因此可以利用史密斯圆图直接读出驻波系数。
+  \end{enumerate}
+\end{remark}
+
+\begin{note}
+  利用史密斯圆图读出驻波系数的步骤如下：
+  \begin{enumerate}
+    \item 在史密斯圆图上找到归一化负载阻抗$z_L$对应的位置，并标记出来。
+    \item 在史密斯圆图以原点为圆心，画出以$|\Gamma_0|$为半径的圆与实轴的交点即为$\Gamma_r=|\Gamma_0|$。
+    \item 利用驻波系数的定义式计算驻波系数：
+    \begin{equation}
+      SWR = \frac{1 + |\Gamma_0|}{1 - |\Gamma_0|}
+    \end{equation}
+  \end{enumerate}
+
+\end{note}
+
+\subsection{特殊的变换条件}
+传输线的归一化阻抗点在史密斯圆图上的转动角度是由传输线的长度或者说是工作频率决定的。
+在给定频率条件下，改变传输线的长度或者负载阻抗，既可以产生感性阻抗，也可以产生容性阻抗。
+
+需要掌握的主要是终端开路和终端短路两种特殊条件下产生感性和容性阻抗的规律：
+\begin{proposition}{开路传输线的阻抗变换规律}{prop:open-circuit-impedance-transformation}
+  为了获得纯的感性阻抗或容性阻抗，必须沿$r=0$的点（开路负载点（1，0））旋转，起始点为开路负载点
+  （$\Gamma_0=1$），向波源方向旋转，即顺时针旋转。
+
+  容性阻抗$-jX_c$可以利用下面的公式计算：
+  \begin{equation}
+    \frac{1}{j\omega C} \frac{1}{Z_0} \equiv z_{in} = -jcot(\beta d_1)
+  \end{equation}
+  感性阻抗$jX_L$可以利用下面的公式计算：
+  \begin{equation}
+    j\omega L \frac{1}{Z_0} \equiv z_{in} =-jcot(\beta d_2)
+  \end{equation}
+  其中$d_1$和$d_2$分别为产生容性阻抗和感性阻抗所需的传输线长度,其计算公式为：
+  \begin{equation}
+    d_1 = \frac{1}{\beta}[arccot(\frac{1}{\omega C Z_0}) + n\pi]
+  \end{equation}
+  \begin{equation}
+    d_2 = \frac{1}{\beta}[\pi-arccot(\frac{\omega L}{Z_0}) + n\pi] 
+  \end{equation}
+
+
+  
+\end{proposition}
+
+\begin{proposition}{短路传输线的阻抗变换规律}{prop:short-circuit-impedance-transformation}
+
+  为了获得纯的感性阻抗或容性阻抗，必须沿$r=0$的点（短路负载点（-1，0））旋转，起始点为短路负载点
+  （$\Gamma_0=-1$），向波源方向旋转，即顺时针旋转。
+
+  容性阻抗$-jX_c$可以利用下面的公式计算：
+  \begin{equation}
+    \frac{1}{j\omega C} \frac{1}{Z_0} \equiv z_{in} = jtan(\beta d_1)
+  \end{equation}
+  感性阻抗$jX_L$可以利用下面的公式计算：
+  \begin{equation}
+    j\omega L \frac{1}{Z_0} \equiv z_{in} = jtan(\beta d_2)
+  \end{equation}
+  其中$d_1$和$d_2$分别为产生容性阻抗和感性阻抗所需的传输线长度,其计算公式为：
+  \begin{equation}
+    d_1 = \frac{1}{\beta}[\pi-arctan(\frac{1}{\omega C Z_0}) + n\pi]
+  \end{equation}
+  \begin{equation}
+    d_2 = \frac{1}{\beta}[arctan(\frac{\omega L}{Z_0}) + n\pi] 
+  \end{equation}
+  
+
+  
+\end{proposition}
 
 
 

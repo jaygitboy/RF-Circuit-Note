@@ -32,42 +32,44 @@
 \contentsline {subsection}{\numberline {3.1.4}图解表示法}{19}{subsection.3.1.4}%
 \contentsline {section}{\numberline {3.2}阻抗变换}{19}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}负载的阻抗变换}{19}{subsection.3.2.1}%
-\contentsline {chapter}{\numberline {4}ElegantBook 设置说明}{21}{chapter.4}%
-\contentsline {section}{\numberline {4.1}语言模式}{21}{section.4.1}%
-\contentsline {section}{\numberline {4.2}设备选项}{21}{section.4.2}%
-\contentsline {section}{\numberline {4.3}颜色主题}{21}{section.4.3}%
-\contentsline {section}{\numberline {4.4}封面}{22}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}封面个性化}{22}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}封面图}{22}{subsection.4.4.2}%
-\contentsline {subsection}{\numberline {4.4.3}徽标}{23}{subsection.4.4.3}%
-\contentsline {subsection}{\numberline {4.4.4}自定义封面}{23}{subsection.4.4.4}%
-\contentsline {section}{\numberline {4.5}章标标题}{23}{section.4.5}%
-\contentsline {section}{\numberline {4.6}数学环境简介}{23}{section.4.6}%
-\contentsline {subsection}{\numberline {4.6.1}定理类环境的使用}{24}{subsection.4.6.1}%
-\contentsline {subsection}{\numberline {4.6.2}修改计数器}{24}{subsection.4.6.2}%
-\contentsline {subsection}{\numberline {4.6.3}其他环境的使用}{24}{subsection.4.6.3}%
-\contentsline {section}{\numberline {4.7}列表环境}{25}{section.4.7}%
-\contentsline {section}{\numberline {4.8}参考文献}{25}{section.4.8}%
-\contentsline {section}{\numberline {4.9}添加序章}{25}{section.4.9}%
-\contentsline {section}{\numberline {4.10}目录选项与深度}{25}{section.4.10}%
-\contentsline {section}{\numberline {4.11}章节摘要}{26}{section.4.11}%
-\contentsline {section}{\numberline {4.12}章后习题}{26}{section.4.12}%
-\contentsline {section}{第 4{} 章~练习}{26}{section*.31}%
-\contentsline {section}{\numberline {4.13}旁注}{27}{section.4.13}%
-\contentsline {chapter}{\numberline {5}字体选项}{28}{chapter.5}%
-\contentsline {section}{\numberline {5.1}数学字体选项}{28}{section.5.1}%
-\contentsline {section}{\numberline {5.2}使用 newtx 系列字体}{28}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}连字符}{28}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}宏包冲突}{28}{subsection.5.2.2}%
-\contentsline {section}{\numberline {5.3}中文字体选项}{29}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}方正字体选项}{29}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}其他中文字体}{29}{subsection.5.3.2}%
-\contentsline {chapter}{\numberline {6}ElegantBook 写作示例}{31}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Lebesgue 积分}{31}{section.6.1}%
-\contentsline {subsection}{\numberline {6.1.1}积分的定义}{31}{subsection.6.1.1}%
-\contentsline {section}{第 6{} 章~练习}{33}{section*.34}%
-\contentsline {chapter}{\numberline {7}常见问题集}{34}{chapter.7}%
-\contentsline {chapter}{\numberline {8}版本更新历史}{35}{chapter.8}%
+\contentsline {subsection}{\numberline {3.2.2}驻波系数}{21}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}特殊的变换条件}{21}{subsection.3.2.3}%
+\contentsline {chapter}{\numberline {4}ElegantBook 设置说明}{23}{chapter.4}%
+\contentsline {section}{\numberline {4.1}语言模式}{23}{section.4.1}%
+\contentsline {section}{\numberline {4.2}设备选项}{23}{section.4.2}%
+\contentsline {section}{\numberline {4.3}颜色主题}{23}{section.4.3}%
+\contentsline {section}{\numberline {4.4}封面}{24}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}封面个性化}{24}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}封面图}{24}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}徽标}{25}{subsection.4.4.3}%
+\contentsline {subsection}{\numberline {4.4.4}自定义封面}{25}{subsection.4.4.4}%
+\contentsline {section}{\numberline {4.5}章标标题}{25}{section.4.5}%
+\contentsline {section}{\numberline {4.6}数学环境简介}{25}{section.4.6}%
+\contentsline {subsection}{\numberline {4.6.1}定理类环境的使用}{26}{subsection.4.6.1}%
+\contentsline {subsection}{\numberline {4.6.2}修改计数器}{26}{subsection.4.6.2}%
+\contentsline {subsection}{\numberline {4.6.3}其他环境的使用}{26}{subsection.4.6.3}%
+\contentsline {section}{\numberline {4.7}列表环境}{27}{section.4.7}%
+\contentsline {section}{\numberline {4.8}参考文献}{27}{section.4.8}%
+\contentsline {section}{\numberline {4.9}添加序章}{27}{section.4.9}%
+\contentsline {section}{\numberline {4.10}目录选项与深度}{27}{section.4.10}%
+\contentsline {section}{\numberline {4.11}章节摘要}{28}{section.4.11}%
+\contentsline {section}{\numberline {4.12}章后习题}{28}{section.4.12}%
+\contentsline {section}{第 4{} 章~练习}{28}{section*.31}%
+\contentsline {section}{\numberline {4.13}旁注}{29}{section.4.13}%
+\contentsline {chapter}{\numberline {5}字体选项}{30}{chapter.5}%
+\contentsline {section}{\numberline {5.1}数学字体选项}{30}{section.5.1}%
+\contentsline {section}{\numberline {5.2}使用 newtx 系列字体}{30}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}连字符}{30}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}宏包冲突}{30}{subsection.5.2.2}%
+\contentsline {section}{\numberline {5.3}中文字体选项}{31}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}方正字体选项}{31}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}其他中文字体}{31}{subsection.5.3.2}%
+\contentsline {chapter}{\numberline {6}ElegantBook 写作示例}{33}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Lebesgue 积分}{33}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}积分的定义}{33}{subsection.6.1.1}%
+\contentsline {section}{第 6{} 章~练习}{35}{section*.34}%
+\contentsline {chapter}{\numberline {7}常见问题集}{36}{chapter.7}%
+\contentsline {chapter}{\numberline {8}版本更新历史}{37}{chapter.8}%
 \renewcommand {\cftchappresnum }{附录 }\renewcommand {\cftchapaftersnum }{}
-\contentsline {chapter}{\numberline {A}基本数学工具}{38}{appendix.A}%
-\contentsline {section}{\numberline {A.1}求和算子与描述统计量}{38}{section.A.1}%
+\contentsline {chapter}{\numberline {A}基本数学工具}{40}{appendix.A}%
+\contentsline {section}{\numberline {A.1}求和算子与描述统计量}{40}{section.A.1}%
