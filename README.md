@@ -4,11 +4,10 @@ This repository contains a LaTeX document serving as **open-book exam preparatio
 
 The notes are primarily intended to help students systematically review key theoretical concepts, circuit analysis methods, and practical design considerations in RF and microwave circuit design. They are also suitable as a quick reference during open-book examinations and for self-study.
 
-The official textbook used in this course is:
+The textbook used in this course is:
 
 **RF Circuit Design: Theory and Application (2nd Edition)**
 
-This document closely follows the structure and core topics of the textbook, while incorporating summarized derivations, clarified explanations, and exam-oriented highlights.
 
 ---
 

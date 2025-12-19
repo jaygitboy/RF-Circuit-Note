@@ -888,8 +888,8 @@ $\Gamma_0r$为反射系数的实部，$\Gamma_0i$为反射系数的虚部，$|\G
     \item $Z_L = 0 \Omega$时，$\Gamma_0 = \frac{0 - 50}{0 + 50} = -1$（终端开路）
     \item $Z_L = \infty$时，$\Gamma_0 = \frac{\infty - 50}{\infty + 50} = 1$（终端短路）
     \item $Z_L = 50\Omega$时，$\Gamma_0 = \frac{50 - 50}{50 + 50} = 0$（匹配）
-    \item $Z_L = 16.67 - j16.67 \Omega$时，$\Gamma_0 = \frac{(16.67 - j16.67) - 50}{(16.67 - j16.67) + 50} = 0.54\angle 221°$
-    \item $Z_L = 50 + j150 \Omega$时，$\Gamma_0 = \frac{(50 + j150) - 50}{(50 + j150) + 50} = 0.83\angle 34°$
+    \item $Z_L = 16.67 - j16.67 \Omega$时，$\Gamma_0 = \frac{(16.67 - j16.67) - 50}{(16.67 - j16.67) + 50} = 0.54\angle 221^\circ$
+    \item $Z_L = 50 + j150 \Omega$时，$\Gamma_0 = \frac{(50 + j150) - 50}{(50 + j150) + 50} = 0.83\angle 34^\circ$
  \end{enumerate}
 
   将上述结果在$\Gamma$复平面上表示出来，如下图所示：
@@ -959,6 +959,100 @@ $\Gamma_0r$为反射系数的实部，$\Gamma_0i$为反射系数的虚部，$|\G
 
 
 \subsection{图解表示法}
+在$|\Gamma|\leqslant 1$的区间，将归一化电阻圆和归一化电抗圆绘制在同一复平面上，
+得到史密斯圆图，其一个重要特征是其在归一化阻抗平面和反射系数平面之间建立了单一
+的映射关系。
+
+\begin{remark}
+  \begin{enumerate}
+    \item 归一化电阻的取值范围为$0 \leq r < \infty$。
+    \item 归一化电抗的取值范围为$-\infty < x < \infty$，其正值代表感性阻抗，负值代表容性阻抗。
+    \item 反射系数不一定落在史密斯圆图内，当$|\Gamma|>1$时，例如负阻状态，反射系数落在圆外。能够
+    显示大于一的反射系数的史密斯圆图称为压缩的史密斯圆图。
+  \end{enumerate}
+\end{remark}
+
+由$r$和 $x$的映射组合成的史密斯圆图如下所示：
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.6\textwidth]{史密斯圆图.png}
+\caption{史密斯圆图}
+\end{figure}
+
+\begin{definition}{电长度}
+  电长度$\beta d$定义为传输线长度$d$与波长$\lambda$的比值乘以$2\pi$：
+  \begin{equation}
+    \beta d = \frac{2\pi d}{\lambda}
+  \end{equation}
+  其代表计算终端加载的传输线输入阻抗时，由于参考面总是逐渐远离负载端而引入有相位变化（以$\Gamma_0$
+  为起点，按顺时针方向旋转$2\beta d$得到$\Gamma(d)=\Gamma_0 e^{-2j\beta d}$）。
+  
+  显然当$d = \lambda/2$时，$\beta d = 180^\circ$，此时反射系数旋转$360^\circ$。
+\end{definition}
+
+\section{阻抗变换}
+\subsection{负载的阻抗变换}
+ 
+本章以具体实例说明如何利用史密斯圆图进行阻抗变换。
+
+一个典型的计算过程如下，对于一个特性阻抗为$Z_0 $的传输线，
+负载端接有一个负载阻抗$Z_L$，传输线长度为$d$，
+求传输线输入端的输入阻抗$Z_{in}$，利用史密斯圆图计算需要以下6个步骤：
+\begin{enumerate}
+  \item 利用传输线的特征阻抗$Z_0$对负载阻抗$Z_L$进行归一化，得到归一化负载阻抗$z_L = \frac{Z_L}{Z_0}$。
+  \item 在史密斯圆图上找到归一化负载阻抗$z_L$对应的位置，并标记出来。
+  \item 在史密斯圆图上读出其对应的负载反射系数$\Gamma_0$的幅度和相位。
+  \item 将$\Gamma_0$按顺时针方向旋转$2\beta d$，得到输入端的反射系数$\Gamma(d)$。
+  \item 读出特定位置处$d$的归一化输入阻抗$z_{in} = \frac{Z_{in}}{Z_0}$。
+  \item 利用传输线的特征阻抗$Z_0$对归一化输入阻抗$z_{in}$进行反归一化，得到输入阻抗$Z_{in} = z_{in} Z_0$。
+\end{enumerate}
+
+\begin{example}
+  用史密斯圆图确定传输线的输入阻抗
+
+  已知负载阻抗$Z_L = 30 + j60 \Omega$，传输线特征阻抗$Z_0 = 50 \Omega$，传输线长度$d = 2cm$，工作
+频率$f = 2GHz$，传输线中的相速度是光速的$50\%$，求传输线的输入阻抗$Z_{in}$。
+\end{example}
+
+\begin{solution}
+  按照上面所述的六个步骤进行计算：
+  \begin{enumerate}
+    \item 归一化负载阻抗为：
+    \begin{equation}
+      z_L = \frac{Z_L}{Z_0} = \frac{30 + j60}{50} = 0.6 + j1.2
+    \end{equation}
+    \item 在史密斯圆图上找到$z_L = 0.6 + j1.2$对应的位置，并标记出来。
+    \item 读出其对应的负载反射系数$\Gamma_0$的幅度和相位，这个归一化阻抗点通过等电阻圆$r=0.6$和等电抗圆$x=1.2$的交点确定，在史密斯圆图上读出如下图。
+    \item 原点到该点的距离即为反射系数的幅度$|\Gamma_0| $（相对于最外边的圆对应单位反射系数$|\Gamma_0|=1$），该点与实轴正方向的夹角即为反射系数的相位$\theta_L$。
+    \item 计算电长度$\beta d$：
+    \begin{equation}
+      \lambda = \frac{v_p}{f} = \frac{3\times10^8 m/s \times 0.5}{2\times10^9 Hz} = 0.075 m
+    \end{equation}
+    \begin{equation}
+      \beta d = \frac{2\pi d}{\lambda} = \frac{2\pi \times 0.02 m}{0.075 m} = 1.6755 rad = 96^\circ
+    \end{equation}
+    将$\Gamma_0$按顺时针方向旋转$2\beta d = 192^\circ$，得到输入端的反射系数$\Gamma_{in}$
+    \item 在史密斯圆图上找到$\Gamma_{in}$对应的位置，读出归一化输入阻抗$z_{in}$，得到：
+    \begin{equation}
+      z_{in} = 0.3-j0.53
+    \end{equation}
+    \item 对归一化输入阻抗进行反归一化，得到输入阻抗$Z_{in} = z_{in} Z_0$。
+  \end{enumerate} 
+  因此传输线的输入阻抗为：
+  \begin{equation}
+    Z_{in} = z_{in} Z_0 = (0.3 - j0.53) \times 50 \Omega = 15 - j26.5 \Omega
+  \end{equation}
+
+  \begin{figure}[h]
+  \centering
+  \includegraphics[width=0.6\textwidth]{史密斯圆图阻抗变换示例.png}
+    
+  \end{figure}
+\end{solution}
+
+\begin{remark}
+  通过史密斯圆图得到的是近似的结果，虽然不如解析计算精确，但是利用软件就能快速的完成高精度的计算。
+\end{remark}
 
 
 
