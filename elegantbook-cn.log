@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.3.27)  20 DEC 2025 16:29
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.3.27)  23 DEC 2025 10:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1579,58 +1579,58 @@ File: ./image/阻抗圆图和导纳圆图.png Graphic file (type bmp)
 <./image/阻抗圆图和导纳圆图.png>
 File: ./image/阻抗-导纳史密斯圆图.png Graphic file (type bmp)
 <./image/阻抗-导纳史密斯圆图.png>
- [23]
+ [23] [24]
 Chapter 4.
 LaTeX Font Info:    Font shape `TU/texgyretermes(0)/m/n' will be
-(Font)              scaled to size 8.0pt on input line 1247.
+(Font)              scaled to size 8.0pt on input line 1250.
 LaTeX Font Info:    Font shape `TU/texgyretermes(0)/m/n' will be
-(Font)              scaled to size 6.0pt on input line 1247.
-[24
+(Font)              scaled to size 6.0pt on input line 1250.
+[25
 
-] [25] [26] [27]
+] [26] [27] [28]
 
-LaTeX Warning: Citation 'cn1' on page 28 undefined on input line 1531.
-
-
-LaTeX Warning: Citation 'en2' on page 28 undefined on input line 1531.
+LaTeX Warning: Citation 'cn1' on page 29 undefined on input line 1534.
 
 
-LaTeX Warning: Citation 'en3' on page 28 undefined on input line 1531.
+LaTeX Warning: Citation 'en2' on page 29 undefined on input line 1534.
 
-[28]
+
+LaTeX Warning: Citation 'en3' on page 29 undefined on input line 1534.
+
+[29]
 LaTeX Font Info:    Font shape `TU/texgyretermes(0)/m/n' will be
-(Font)              scaled to size 14.4pt on input line 1609.
- [29] [30]
+(Font)              scaled to size 14.4pt on input line 1612.
+ [30] [31]
 Chapter 5.
-[31
+[32
 
 ]
 File: ./image/founder.png Graphic file (type bmp)
 <./image/founder.png>
- [32] [33]
+ [33] [34]
 Chapter 6.
-[34
+[35
 
 ]
 File: ./image/scatter.jpg Graphic file (type bmp)
 <./image/scatter.jpg>
- [35] [36]
+ [36] [37]
 Chapter 7.
-[37
+[38
 
 ]
 Chapter 8.
 LaTeX Font Info:    Font shape `TU/texgyretermes(0)/b/n' will be
-(Font)              scaled to size 9.0pt on input line 1895.
-[38
+(Font)              scaled to size 9.0pt on input line 1898.
+[39
 
-] [39]
+] [40]
 
-LaTeX Warning: Empty bibliography on input line 2054.
+LaTeX Warning: Empty bibliography on input line 2057.
 
-[40]
+[41]
 附录 A.
-[41
+[42
 
 ] (./elegantbook-cn.aux)
  ***********
@@ -1647,8 +1647,14 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package rerunfilecheck Info: File `elegantbook-cn.out' has not changed.
-(rerunfilecheck)             Checksum: FCE55B654A7E6713C9716CCEDF8F0A79;9656.
+
+Package rerunfilecheck Warning: File `elegantbook-cn.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `elegantbook-cn.out':
+(rerunfilecheck)             Before: FCE55B654A7E6713C9716CCEDF8F0A79;9656
+(rerunfilecheck)             After:  6D20563B29FF9D1A55E64216FB05744B;9789.
 
 Package biblatex Warning: Please (re)run Biber on the file:
 (biblatex)                elegantbook-cn
@@ -1667,4 +1673,4 @@ Here is how much of TeX's memory you used:
  1348 hyphenation exceptions out of 8191
  103i,18n,108p,683b,2324s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on elegantbook-cn.pdf (44 pages).
+Output written on elegantbook-cn.pdf (45 pages).
