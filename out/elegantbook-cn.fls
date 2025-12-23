@@ -1,0 +1,5 @@
+PWD e:/latex_project/RF-Circuit-notes
+INPUT d:/texlive/texlive/2025/texmf.cnf
+INPUT d:/texlive/texlive/2025/texmf-dist/web2c/texmf.cnf
+INPUT d:/texlive/texlive/2025/texmf-var/web2c/xetex/xelatex.fmt
+INPUT e:/latex_project/RF-Circuit-notes/elegantbook-cn.tex

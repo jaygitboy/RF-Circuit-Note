@@ -1102,12 +1102,153 @@ $\Gamma_0r$为反射系数的实部，$\Gamma_0i$为反射系数的虚部，$|\G
   通过史密斯圆图得到的是近似的结果，虽然不如解析计算精确，但是利用软件就能快速的完成高精度的计算。
 \end{remark}
 
+\subsection{驻波系数}
+传输线任意位置$d$的驻波系数（SWR）定义为传输线该处上最大电压与最小电压之比：
+\begin{equation}
+  SWR = \frac{V_{max}}{V_{min}} = \frac{1 + |\Gamma(d)|}{1 - |\Gamma(d)|}
+\end{equation}
+其中，$|\Gamma(d)|$为该位置处的反射系数的幅度，$|\Gamma(d)|$可以利用上式反解出：
+\begin{equation}
+  |\Gamma(d)| = \frac{SWR - 1}{SWR + 1}
+\end{equation}
+
+
+\begin{remark}
+  \begin{enumerate}
+    \item 驻波系数的取值范围为$1 \leq SWR < \infty$，当传输线完全匹配时，$|\Gamma(d)| = 0$，此时$SWR = 1$；
+      当传输线完全失配时，$|\Gamma(d)| = 1$，此时$SWR \to \infty$。
+    \item SWR的表达式与给定反射系数求阻抗的表达式形式相似，因此可以利用史密斯圆图直接读出驻波系数。
+  \end{enumerate}
+\end{remark}
+
+\begin{note}
+  利用史密斯圆图读出驻波系数的步骤如下：
+  \begin{enumerate}
+    \item 在史密斯圆图上找到归一化负载阻抗$z_L$对应的位置，并标记出来。
+    \item 在史密斯圆图以原点为圆心，画出以$|\Gamma_0|$为半径的圆与实轴的交点即为$\Gamma_r=|\Gamma_0|$。
+    \item 利用驻波系数的定义式计算驻波系数：
+    \begin{equation}
+      SWR = \frac{1 + |\Gamma_0|}{1 - |\Gamma_0|}
+    \end{equation}
+  \end{enumerate}
+
+\end{note}
+
+\subsection{特殊的变换条件}
+传输线的归一化阻抗点在史密斯圆图上的转动角度是由传输线的长度或者说是工作频率决定的。
+在给定频率条件下，改变传输线的长度或者负载阻抗，既可以产生感性阻抗，也可以产生容性阻抗。
+
+需要掌握的主要是终端开路和终端短路两种特殊条件下产生感性和容性阻抗的规律：
+\begin{proposition}{开路传输线的阻抗变换规律}{prop:open-circuit-impedance-transformation}
+  为了获得纯的感性阻抗或容性阻抗，必须沿$r=0$的点（开路负载点（1，0））旋转，起始点为开路负载点
+  （$\Gamma_0=1$），向波源方向旋转，即顺时针旋转。
+
+  容性阻抗$-jX_c$可以利用下面的公式计算：
+  \begin{equation}
+    \frac{1}{j\omega C} \frac{1}{Z_0} \equiv z_{in} = -jcot(\beta d_1)
+  \end{equation}
+  感性阻抗$jX_L$可以利用下面的公式计算：
+  \begin{equation}
+    j\omega L \frac{1}{Z_0} \equiv z_{in} =-jcot(\beta d_2)
+  \end{equation}
+  其中$d_1$和$d_2$分别为产生容性阻抗和感性阻抗所需的传输线长度,其计算公式为：
+  \begin{equation}
+    d_1 = \frac{1}{\beta}[arccot(\frac{1}{\omega C Z_0}) + n\pi]
+  \end{equation}
+  \begin{equation}
+    d_2 = \frac{1}{\beta}[\pi-arccot(\frac{\omega L}{Z_0}) + n\pi] 
+  \end{equation}
+
+用史密斯圆图进行图解：求出归一化电抗$x_{in}$，找到与单位圆的交点，从$\Gamma_0=1$
+沿顺时针方向旋转到该交点，读出对应的电长度$2 \beta d$，即可求出传输线长度$d$。
+
+
+\end{proposition}
+
+\begin{proposition}{短路传输线的阻抗变换规律}{prop:short-circuit-impedance-transformation}
+
+  为了获得纯的感性阻抗或容性阻抗，必须沿$r=0$的点（短路负载点（-1，0））旋转，起始点为短路负载点
+  （$\Gamma_0=-1$），向波源方向旋转，即顺时针旋转。
+
+  容性阻抗$-jX_c$可以利用下面的公式计算：
+  \begin{equation}
+    \frac{1}{j\omega C} \frac{1}{Z_0} \equiv z_{in} = jtan(\beta d_1)
+  \end{equation}
+  感性阻抗$jX_L$可以利用下面的公式计算：
+  \begin{equation}
+    j\omega L \frac{1}{Z_0} \equiv z_{in} = jtan(\beta d_2)
+  \end{equation}
+  其中$d_1$和$d_2$分别为产生容性阻抗和感性阻抗所需的传输线长度,其计算公式为：
+  \begin{equation}
+    d_1 = \frac{1}{\beta}[\pi-arctan(\frac{1}{\omega C Z_0}) + n\pi]
+  \end{equation}
+  \begin{equation}
+    d_2 = \frac{1}{\beta}[arctan(\frac{\omega L}{Z_0}) + n\pi] 
+  \end{equation}
+  
+用史密斯圆图进行图解：求出归一化电抗$x_{in}$，找到与单位圆的交点，从$\Gamma_0=-1$
+沿顺时针方向旋转到该交点，读出对应的电长度$2 \beta d$，即可求出传输线长度$d$。
+
+
+\end{proposition}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.6\textwidth]{开路.png}
+  \caption{开路传输线的阻抗变换示意图}
+\end{figure}
 
 
 
 
+\newpage
+\section{导纳变换}
+导纳$Y$定义为阻抗$Z$的倒数：
+\begin{equation}
+  Y = \frac{1}{Z} 
+\end{equation}
+归一化导纳$y_{in}$定义为归一化阻抗$z_{in}$的倒数：
+\begin{equation}
+  y_{in} = \frac{1}{z_{in}} = \frac{1-\Gamma(d)}{1+\Gamma(d)}
+\end{equation}
+在史密斯圆图上，导纳的表示方法与阻抗类似，等效于将归一化阻抗在$\Gamma$平面
+上绕原点旋转$180^\circ$。
 
+\begin{definition}{导纳史密斯圆图}{def:admittance-smith-chart}
+  导纳史密斯圆图是将归一化阻抗史密斯圆图绕原点旋转$180^\circ$得到的圆图。对应的关系是
+  归一化电阻变为归一化电导，归一化电抗变为归一化电纳：
+  \begin{equation}
+    g = \frac{G}{Y_0} = Z_0 G
+  \end{equation}
+  \begin{equation}
+    b = \frac{B}{Y_0} = Z_0 B
+  \end{equation}
+  阻抗圆图变换为导纳圆图的规则如下：
+  \begin{enumerate}
+    \item 反射系数辐角的增量方向不变；
+    \item 旋转方向不变；
+    \item 阻抗圆图的短路点变为导纳圆图的开路点，阻抗圆图的开路点变为导纳圆图的短路点；
+    \item 负的导纳在导纳圆图的上半部分，对应于感性；正的导纳在导纳圆图的下半部分，对应于容性。
+  \end{enumerate}
+  
+\end{definition}
 
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.6\textwidth]{阻抗圆图和导纳圆图.png}
+  \caption{阻抗圆图和导纳圆图}
+\end{figure}
+
+\begin{definition}{阻抗-导纳史密斯圆图}
+  阻抗-导纳史密斯圆图是将归一化阻抗史密斯圆图和归一化导纳史密斯圆图叠加在一起的圆图。
+  在该圆图上，可以同时表示归一化阻抗和归一化导纳，便于在阻抗和导纳之间进行转换。
+\end{definition}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.2\textwidth]{阻抗-导纳史密斯圆图.png}
+  \caption{阻抗-导纳史密斯圆图}
+\end{figure}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1117,6 +1258,11 @@ $\Gamma_0r$为反射系数的实部，$\Gamma_0i$为反射系数的虚部，$|\G
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \chapter{射频滤波器设计}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.6\textwidth]{短路.png}
+  \caption{短路传输线的阻抗变换示意图}
+\end{figure}
 
 
 
