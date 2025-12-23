@@ -819,12 +819,60 @@ Z_{\mathrm{in}}(d) = Z_0 \frac{Z_L + jZ_0 \tan(\beta d)}{Z_0 + jZ_L \tan(\beta d
 \begin{equation}
   Z_{in}(d) =  jZ_0 \tan(\beta d)
 \end{equation}
-这表明在终端短路的情况下，输入阻抗为零，即传输线的末端被短路。
+电压、电流表达式为：
+\begin{equation}
+  V(d) = V^{+}(e^{j\beta d} - e^{-j\beta d}) = 2j V^{+} \sin(\beta d)
+\end{equation}
+\begin{equation}
+  I(d) = \frac{V^{+}}{Z_0}(e^{j\beta d} - e^{-j\beta d}) = \frac{2 V^{+}}{Z_0} \cos(\beta d)
+\end{equation}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.6\textwidth]{终端短路的输入阻抗、电压、电流随传输线长度的函数关系.png}
+\caption{终端短路的输入阻抗、电压、电流随传输线长度的函数关系}
+\end{figure}
+\subsubsection{终端开路的传输线}
+同上，可以写出三个表达式：
+\begin{equation}
+  Z_{in}(d) = -jZ_0 \cot(\beta d)
+\end{equation}
+\begin{equation}
+  V(d) = V^{+}(e^{j\beta d} + e^{-j\beta d}) = 2V^{+} \cos(\beta d)
+\end{equation}
+\begin{equation}
+  I(d) = \frac{V^{+}}{Z_0}(e^{j\beta d} + e^{-j\beta d}) = \frac{2j V^{+}}{Z_0} \sin(\beta d)
+\end{equation}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.6\textwidth]{终端开路的输入阻抗、电压、电流与传输线长度的函数关系.png}
+\caption{终端开路的输入阻抗、电压、电流与传输线长度的函数关系}
+\end{figure}
 
+通过上面两张图，可以看到，传输线长度每发生1/4波长的变化，从输入端看进去的信号的“性质”就会发生一次反转，这也就引出了1/4波长传输线的概念
 
+\subsubsection{1/2波长传输线和1/4波长传输线}
+在本节我们讨论两种特殊的传输线长度：1/2波长传输线和1/4波长传输线。
+首先是1/2波长传输线。
+\begin{definition}{1/2波长传输线}{def:half-wave}
+当传输线的长度$d$满足$\beta d = \pi$时，称该传输线为1/2波长传输线，此时输入阻抗为：
+\begin{equation}
+  Z_{in}(d) = Z_0 \frac{Z_L + jZ_0 \tan(\beta d)}{Z_0 + jZ_L \tan(\beta d)}
+\end{equation}
+\end{definition}
+\begin{definition}{1/4波长传输线}{def:quarter-wave}
+当传输线的长度$d$满足$\beta d = \frac{\pi}{2}$时，称该传输线为1/4波长传输线，此时输入阻抗为：
+\begin{equation}
+ Z_{\text{in}}(d=\lambda /4)=Z_{0} \frac{Z_{L}+jZ_{0}\tan\left(\frac{2\pi}{\lambda}\cdot\frac{\lambda}{4}\right)}{Z_{0}+jZ_{L}\tan\left(\frac{2\pi}{\lambda}\cdot\frac{\lambda}{4}\right)}=\frac{Z_{0}^{2}}{Z_{L}}
+\end{equation}
+\end{definition}
 
+因此，通过对传输线的设计，可以使一个实数负载阻抗和一个需要的实数输入阻抗相匹配。
+\begin{equation}
+  Z_{0} = \sqrt{Z_{\text{in}} \cdot Z_{L}}
+\end{equation}
 
-
+\section{驻波}
+\section{传输线的功率功率问题}
 
 
 
@@ -1151,11 +1199,6 @@ $\Gamma_0r$为反射系数的实部，$\Gamma_0i$为反射系数的虚部，$|\G
 \end{figure}
 
 
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=0.6\textwidth]{短路.png}
-  \caption{短路传输线的阻抗变换示意图}
-\end{figure}
 
 
 \newpage
@@ -1211,6 +1254,18 @@ $\Gamma_0r$为反射系数的实部，$\Gamma_0i$为反射系数的虚部，$|\G
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%第五章 射频滤波器设计 -by HHX
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{射频滤波器设计}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.6\textwidth]{短路.png}
+  \caption{短路传输线的阻抗变换示意图}
+\end{figure}
 
 
 
