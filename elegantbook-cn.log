@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.3.27)  23 DEC 2025 10:38
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.3.27)  28 DEC 2025 23:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1459,13 +1459,14 @@ LaTeX Font Info:    Font shape `TU/texgyretermes(0)/m/it' will be
 
 
 
-])
+]
+LaTeX Font Info:    Font shape `TU/texgyretermes(0)/m/n' will be
+(Font)              scaled to size 9.0pt on input line 85.
+ [2])
 \tf@toc=\write8
 \openout8 = `elegantbook-cn.toc'.
 
-LaTeX Font Info:    Font shape `TU/texgyretermes(0)/m/n' will be
-(Font)              scaled to size 9.0pt on input line 35.
- [2]
+ [3]
 Chapter 1.
 LaTeX Font Info:    Font shape `TU/texgyretermes(0)/m/n' will be
 (Font)              scaled to size 7.0pt on input line 46.
@@ -1552,85 +1553,109 @@ File: ./image/电压回路和电流节点.png Graphic file (type bmp)
  [14]
 File: ./image/传输线反射示意图.png Graphic file (type bmp)
 <./image/传输线反射示意图.png>
- [15] [16]
+ [15]
+File: ./image/终端短路的输入阻抗、电压、电流随传输线长度的函数关系.png Graphic file (type bmp)
+<./image/终端短路的输入阻抗、电压、电流随传输线长度的函数关系.png>
+ [16]
+File: ./image/终端开路的输入阻抗、电压、电流与传输线长度的函数关系.png Graphic file (type bmp)
+<./image/终端开路的输入阻抗、电压、电流与传输线长度的函数关系.png>
+ [17] [18]
 Chapter 3.
 File: ./image/反射系数复平面表示.png Graphic file (type bmp)
 <./image/反射系数复平面表示.png>
-[17
+[19
 
 ]
 File: ./image/恒定实部r的圆映射.png Graphic file (type bmp)
 <./image/恒定实部r的圆映射.png>
 File: ./image/恒定虚部x的圆映射.png Graphic file (type bmp)
 <./image/恒定虚部x的圆映射.png>
- [18]
+ [20]
 File: ./image/史密斯圆图.png Graphic file (type bmp)
 <./image/史密斯圆图.png>
- [19]
+ [21]
 File: ./image/史密斯圆图阻抗变换示例.png Graphic file (type bmp)
 <./image/史密斯圆图阻抗变换示例.png>
- [20] [21]
+ [22] [23]
 File: ./image/开路.png Graphic file (type bmp)
 <./image/开路.png>
 File: ./image/短路.png Graphic file (type bmp)
 <./image/短路.png>
- [22]
+ [24]
 File: ./image/阻抗圆图和导纳圆图.png Graphic file (type bmp)
 <./image/阻抗圆图和导纳圆图.png>
 File: ./image/阻抗-导纳史密斯圆图.png Graphic file (type bmp)
 <./image/阻抗-导纳史密斯圆图.png>
- [23] [24]
+ [25]
+File: ./image/电阻与电感并联电路.png Graphic file (type bmp)
+<./image/电阻与电感并联电路.png>
+File: ./image/电阻与电容并联电路.png Graphic file (type bmp)
+<./image/电阻与电容并联电路.png>
+File: ./image/电阻与电感串联电路.png Graphic file (type bmp)
+<./image/电阻与电感串联电路.png>
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[26]
+File: ./image/电阻与电容串联电路.png Graphic file (type bmp)
+<./image/电阻与电容串联电路.png>
+ [27]
 Chapter 4.
-LaTeX Font Info:    Font shape `TU/texgyretermes(0)/m/n' will be
-(Font)              scaled to size 8.0pt on input line 1250.
-LaTeX Font Info:    Font shape `TU/texgyretermes(0)/m/n' will be
-(Font)              scaled to size 6.0pt on input line 1250.
-[25
+[28
 
-] [26] [27] [28]
-
-LaTeX Warning: Citation 'cn1' on page 29 undefined on input line 1534.
-
-
-LaTeX Warning: Citation 'en2' on page 29 undefined on input line 1534.
-
-
-LaTeX Warning: Citation 'en3' on page 29 undefined on input line 1534.
-
-[29]
-LaTeX Font Info:    Font shape `TU/texgyretermes(0)/m/n' will be
-(Font)              scaled to size 14.4pt on input line 1612.
- [30] [31]
+]
 Chapter 5.
-[32
+LaTeX Font Info:    Font shape `TU/texgyretermes(0)/m/n' will be
+(Font)              scaled to size 8.0pt on input line 1353.
+LaTeX Font Info:    Font shape `TU/texgyretermes(0)/m/n' will be
+(Font)              scaled to size 6.0pt on input line 1353.
+[29
+
+] [30] [31] [32]
+
+LaTeX Warning: Citation 'cn1' on page 33 undefined on input line 1637.
+
+
+LaTeX Warning: Citation 'en2' on page 33 undefined on input line 1637.
+
+
+LaTeX Warning: Citation 'en3' on page 33 undefined on input line 1637.
+
+[33]
+LaTeX Font Info:    Font shape `TU/texgyretermes(0)/m/n' will be
+(Font)              scaled to size 14.4pt on input line 1715.
+ [34] [35]
+Chapter 6.
+[36
 
 ]
 File: ./image/founder.png Graphic file (type bmp)
 <./image/founder.png>
- [33] [34]
-Chapter 6.
-[35
+ [37] [38]
+Chapter 7.
+[39
 
 ]
 File: ./image/scatter.jpg Graphic file (type bmp)
 <./image/scatter.jpg>
- [36] [37]
-Chapter 7.
-[38
+ [40] [41]
+Chapter 8.
+[42
 
 ]
-Chapter 8.
+Chapter 9.
 LaTeX Font Info:    Font shape `TU/texgyretermes(0)/b/n' will be
-(Font)              scaled to size 9.0pt on input line 1898.
-[39
+(Font)              scaled to size 9.0pt on input line 2001.
+[43
 
-] [40]
+] [44]
 
-LaTeX Warning: Empty bibliography on input line 2057.
+LaTeX Warning: Empty bibliography on input line 2160.
 
-[41]
+[45]
 附录 A.
-[42
+[46
 
 ] (./elegantbook-cn.aux)
  ***********
@@ -1647,14 +1672,8 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-
-Package rerunfilecheck Warning: File `elegantbook-cn.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `elegantbook-cn.out':
-(rerunfilecheck)             Before: FCE55B654A7E6713C9716CCEDF8F0A79;9656
-(rerunfilecheck)             After:  6D20563B29FF9D1A55E64216FB05744B;9789.
+Package rerunfilecheck Info: File `elegantbook-cn.out' has not changed.
+(rerunfilecheck)             Checksum: 487846CA99BED422CF78916D0A3E41E2;11161.
 
 Package biblatex Warning: Please (re)run Biber on the file:
 (biblatex)                elegantbook-cn
@@ -1665,12 +1684,12 @@ Package logreq Info: Writing requests to 'elegantbook-cn.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 49165 strings out of 474761
- 1045584 string characters out of 5761074
- 2086093 words of memory out of 5000000
- 70490 multiletter control sequences out of 15000+600000
+ 49238 strings out of 474761
+ 1047678 string characters out of 5761074
+ 2087812 words of memory out of 5000000
+ 70557 multiletter control sequences out of 15000+600000
  568650 words of font info for 137 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  103i,18n,108p,683b,2324s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on elegantbook-cn.pdf (45 pages).
+Output written on elegantbook-cn.pdf (50 pages).

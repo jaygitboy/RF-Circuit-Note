@@ -1199,7 +1199,11 @@ $\Gamma_0r$为反射系数的实部，$\Gamma_0i$为反射系数的虚部，$|\G
 \end{figure}
 
 
-
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.6\textwidth]{短路.png}
+  \caption{短路传输线的阻抗变换示意图}
+\end{figure}
 
 \newpage
 \section{导纳变换}
@@ -1251,8 +1255,56 @@ $\Gamma_0r$为反射系数的实部，$\Gamma_0i$为反射系数的虚部，$|\G
 \end{figure}
 
 \section{并联和串联电路}
+几种基本的电路元件排列和在Smith圆图上显示他们
+作为频率函数的阻抗响应。
+\subsection{电阻与电感并联}
+对于给定的角频率$\omega_L$，如图所示，归一化导纳值为：
+\begin{equation}
+  y_{in} (\omega_L)= g - j\frac{Z_0}{\omega_L L}
+\end{equation}
+其中，$g = \frac{R}{Z_0}$为归一化电导，$b_L = -\frac{Z_0}{\omega_L L}$为归一化电纳。
 
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.6\textwidth]{电阻与电感并联电路.png}
+  \caption{电阻与电感并联电路}
+\end{figure}
+\subsection{电阻与电容并联}
+对于给定的角频率$\omega_L$和电纳$b_C=Z_0 \omega C$，如图所示，归一化导纳值为：
+\begin{equation}
+  y_{in} (\omega_L)= g + j Z_0 \omega_L C
+\end{equation}
+其中，$g = \frac{R}{Z_0}$为归一化电导，$b_C = Z_0 \omega_L C$为归一化电纳。
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.6\textwidth]{电阻与电容并联电路.png}
+  \caption{电阻与电容并联电路}
+\end{figure}
+\subsection{电阻与电感串联}
+对于给定的角频率$\omega_L$和归一化电抗$x_L = \frac{\Omega L}{Z_0}$，如图所示，归一化阻抗值为：
+\begin{equation}
+  z_{in} (\omega_L)= r + j \frac{\omega_L L}{Z_0}
+\end{equation}
+其中，$r = \frac{R}{Z_0}$为归一化电阻，$x_L = \frac{\omega_L L}{Z_0}$为归一化电抗。
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.6\textwidth]{电阻与电感串联电路.png}
+  \caption{电阻与电感串联电路}
+\end{figure}
 
+\subsection{电阻与电容串联}
+对于给定的角频率$\omega_L$和归一化电抗$x_C =- \frac{1}{\omega_C C Z_0}$，如图所示，归一化阻抗值为：
+
+\begin{equation}
+  z_{in} (\omega_L)= r - j \frac{1}{\omega_L C Z_0}
+\end{equation}
+
+其中，$r = \frac{R}{Z_0}$为归一化电阻，$x_C = -\frac{1}{\omega_L C Z_0}$为归一化电抗。
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.6\textwidth]{电阻与电容串联电路.png}
+  \caption{电阻与电容串联电路}
+\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1261,11 +1313,7 @@ $\Gamma_0r$为反射系数的实部，$\Gamma_0i$为反射系数的虚部，$|\G
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \chapter{射频滤波器设计}
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=0.6\textwidth]{短路.png}
-  \caption{短路传输线的阻抗变换示意图}
-\end{figure}
+
 
 
 

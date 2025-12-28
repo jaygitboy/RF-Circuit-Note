@@ -24,54 +24,63 @@
 \contentsline {subsection}{\numberline {2.4.1}反射系数与输入阻抗}{15}{subsection.2.4.1}%
 \contentsline {subsection}{\numberline {2.4.2}典型终端条件}{16}{subsection.2.4.2}%
 \contentsline {subsubsection}{\numberline {2.4.2.1}终端短路的传输线}{16}{subsubsection.2.4.2.1}%
-\contentsline {chapter}{\numberline {3}史密斯圆图}{17}{chapter.3}%
-\contentsline {section}{\numberline {3.1}反射系数与负载阻抗}{17}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}复数形式的反射系数}{17}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}归一化阻抗公式}{18}{subsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.1.3}反射系数的参量方程}{18}{subsection.3.1.3}%
-\contentsline {subsection}{\numberline {3.1.4}图解表示法}{19}{subsection.3.1.4}%
-\contentsline {section}{\numberline {3.2}阻抗变换}{19}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}负载的阻抗变换}{19}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}驻波系数}{21}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}特殊的变换条件}{21}{subsection.3.2.3}%
-\contentsline {section}{\numberline {3.3}导纳变换}{23}{section.3.3}%
-\contentsline {section}{\numberline {3.4}并联和串联电路}{24}{section.3.4}%
-\contentsline {chapter}{\numberline {4}ElegantBook 设置说明}{25}{chapter.4}%
-\contentsline {section}{\numberline {4.1}语言模式}{25}{section.4.1}%
-\contentsline {section}{\numberline {4.2}设备选项}{25}{section.4.2}%
-\contentsline {section}{\numberline {4.3}颜色主题}{25}{section.4.3}%
-\contentsline {section}{\numberline {4.4}封面}{26}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}封面个性化}{26}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}封面图}{26}{subsection.4.4.2}%
-\contentsline {subsection}{\numberline {4.4.3}徽标}{27}{subsection.4.4.3}%
-\contentsline {subsection}{\numberline {4.4.4}自定义封面}{27}{subsection.4.4.4}%
-\contentsline {section}{\numberline {4.5}章标标题}{27}{section.4.5}%
-\contentsline {section}{\numberline {4.6}数学环境简介}{27}{section.4.6}%
-\contentsline {subsection}{\numberline {4.6.1}定理类环境的使用}{28}{subsection.4.6.1}%
-\contentsline {subsection}{\numberline {4.6.2}修改计数器}{28}{subsection.4.6.2}%
-\contentsline {subsection}{\numberline {4.6.3}其他环境的使用}{28}{subsection.4.6.3}%
-\contentsline {section}{\numberline {4.7}列表环境}{29}{section.4.7}%
-\contentsline {section}{\numberline {4.8}参考文献}{29}{section.4.8}%
-\contentsline {section}{\numberline {4.9}添加序章}{29}{section.4.9}%
-\contentsline {section}{\numberline {4.10}目录选项与深度}{29}{section.4.10}%
-\contentsline {section}{\numberline {4.11}章节摘要}{30}{section.4.11}%
-\contentsline {section}{\numberline {4.12}章后习题}{30}{section.4.12}%
-\contentsline {section}{第 4{} 章~练习}{30}{section*.35}%
-\contentsline {section}{\numberline {4.13}旁注}{31}{section.4.13}%
-\contentsline {chapter}{\numberline {5}字体选项}{32}{chapter.5}%
-\contentsline {section}{\numberline {5.1}数学字体选项}{32}{section.5.1}%
-\contentsline {section}{\numberline {5.2}使用 newtx 系列字体}{32}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}连字符}{32}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}宏包冲突}{32}{subsection.5.2.2}%
-\contentsline {section}{\numberline {5.3}中文字体选项}{33}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}方正字体选项}{33}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}其他中文字体}{33}{subsection.5.3.2}%
-\contentsline {chapter}{\numberline {6}ElegantBook 写作示例}{35}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Lebesgue 积分}{35}{section.6.1}%
-\contentsline {subsection}{\numberline {6.1.1}积分的定义}{35}{subsection.6.1.1}%
-\contentsline {section}{第 6{} 章~练习}{37}{section*.38}%
-\contentsline {chapter}{\numberline {7}常见问题集}{38}{chapter.7}%
-\contentsline {chapter}{\numberline {8}版本更新历史}{39}{chapter.8}%
+\contentsline {subsubsection}{\numberline {2.4.2.2}终端开路的传输线}{17}{subsubsection.2.4.2.2}%
+\contentsline {subsubsection}{\numberline {2.4.2.3}1/2波长传输线和1/4波长传输线}{17}{subsubsection.2.4.2.3}%
+\contentsline {section}{\numberline {2.5}驻波}{18}{section.2.5}%
+\contentsline {section}{\numberline {2.6}传输线的功率功率问题}{18}{section.2.6}%
+\contentsline {chapter}{\numberline {3}史密斯圆图}{19}{chapter.3}%
+\contentsline {section}{\numberline {3.1}反射系数与负载阻抗}{19}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}复数形式的反射系数}{19}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}归一化阻抗公式}{20}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}反射系数的参量方程}{20}{subsection.3.1.3}%
+\contentsline {subsection}{\numberline {3.1.4}图解表示法}{21}{subsection.3.1.4}%
+\contentsline {section}{\numberline {3.2}阻抗变换}{21}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}负载的阻抗变换}{21}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}驻波系数}{23}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}特殊的变换条件}{23}{subsection.3.2.3}%
+\contentsline {section}{\numberline {3.3}导纳变换}{25}{section.3.3}%
+\contentsline {section}{\numberline {3.4}并联和串联电路}{26}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}电阻与电感并联}{26}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}电阻与电容并联}{26}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}电阻与电感串联}{26}{subsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.4.4}电阻与电容串联}{27}{subsection.3.4.4}%
+\contentsline {chapter}{\numberline {4}射频滤波器设计}{28}{chapter.4}%
+\contentsline {chapter}{\numberline {5}ElegantBook 设置说明}{29}{chapter.5}%
+\contentsline {section}{\numberline {5.1}语言模式}{29}{section.5.1}%
+\contentsline {section}{\numberline {5.2}设备选项}{29}{section.5.2}%
+\contentsline {section}{\numberline {5.3}颜色主题}{29}{section.5.3}%
+\contentsline {section}{\numberline {5.4}封面}{30}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}封面个性化}{30}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}封面图}{30}{subsection.5.4.2}%
+\contentsline {subsection}{\numberline {5.4.3}徽标}{31}{subsection.5.4.3}%
+\contentsline {subsection}{\numberline {5.4.4}自定义封面}{31}{subsection.5.4.4}%
+\contentsline {section}{\numberline {5.5}章标标题}{31}{section.5.5}%
+\contentsline {section}{\numberline {5.6}数学环境简介}{31}{section.5.6}%
+\contentsline {subsection}{\numberline {5.6.1}定理类环境的使用}{32}{subsection.5.6.1}%
+\contentsline {subsection}{\numberline {5.6.2}修改计数器}{32}{subsection.5.6.2}%
+\contentsline {subsection}{\numberline {5.6.3}其他环境的使用}{32}{subsection.5.6.3}%
+\contentsline {section}{\numberline {5.7}列表环境}{33}{section.5.7}%
+\contentsline {section}{\numberline {5.8}参考文献}{33}{section.5.8}%
+\contentsline {section}{\numberline {5.9}添加序章}{33}{section.5.9}%
+\contentsline {section}{\numberline {5.10}目录选项与深度}{33}{section.5.10}%
+\contentsline {section}{\numberline {5.11}章节摘要}{34}{section.5.11}%
+\contentsline {section}{\numberline {5.12}章后习题}{34}{section.5.12}%
+\contentsline {section}{第 5{} 章~练习}{34}{section*.41}%
+\contentsline {section}{\numberline {5.13}旁注}{35}{section.5.13}%
+\contentsline {chapter}{\numberline {6}字体选项}{36}{chapter.6}%
+\contentsline {section}{\numberline {6.1}数学字体选项}{36}{section.6.1}%
+\contentsline {section}{\numberline {6.2}使用 newtx 系列字体}{36}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}连字符}{36}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}宏包冲突}{36}{subsection.6.2.2}%
+\contentsline {section}{\numberline {6.3}中文字体选项}{37}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}方正字体选项}{37}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}其他中文字体}{37}{subsection.6.3.2}%
+\contentsline {chapter}{\numberline {7}ElegantBook 写作示例}{39}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Lebesgue 积分}{39}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}积分的定义}{39}{subsection.7.1.1}%
+\contentsline {section}{第 7{} 章~练习}{41}{section*.44}%
+\contentsline {chapter}{\numberline {8}常见问题集}{42}{chapter.8}%
+\contentsline {chapter}{\numberline {9}版本更新历史}{43}{chapter.9}%
 \renewcommand {\cftchappresnum }{附录 }\renewcommand {\cftchapaftersnum }{}
-\contentsline {chapter}{\numberline {A}基本数学工具}{42}{appendix.A}%
-\contentsline {section}{\numberline {A.1}求和算子与描述统计量}{42}{section.A.1}%
+\contentsline {chapter}{\numberline {A}基本数学工具}{46}{appendix.A}%
+\contentsline {section}{\numberline {A.1}求和算子与描述统计量}{46}{section.A.1}%
